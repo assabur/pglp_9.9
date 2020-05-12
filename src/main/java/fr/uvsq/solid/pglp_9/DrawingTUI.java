@@ -2,17 +2,22 @@ package fr.uvsq.solid.pglp_9;
 
 import java.util.Scanner;
 
+import DessinException.ErreurCommandeException;
+
 public class DrawingTUI 
 {
 	Interpreter interpreter=new Interpreter();
 	Scanner reponse=new Scanner(System.in);
-	public void nextCommand()
+	public void nextCommand() throws ErreurCommandeException
 	{		 	
-		 String saisie="";
+	do{
+		String saisie="";
 		 System.out.println("Dessin>");
 		 saisie=reponse.nextLine();
-		 //je recupere la commande a effectué apres avoir interpreté la saisie de l'user
-		// interpreter.testcommand(saisie);
+		if(!interpreter.isMatching(saisie))
+			throw new ErreurCommandeException();
+	}while(true); 
+	
 	}
 	
 	public void shwow()

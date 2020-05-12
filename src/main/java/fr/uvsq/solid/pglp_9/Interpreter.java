@@ -1,11 +1,10 @@
 package fr.uvsq.solid.pglp_9;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-
 
 public class Interpreter 
 {
@@ -68,10 +67,11 @@ public class Interpreter
 	
 	/**
 	 * Recupere le nom et la commande et les arguments de la commande
-	 * ecrite par l'utilisateur dans Str
+	 * ecrite par l'utilisateur 
 	 * @param Str
 	 */
-	public static void Stringsplit(String Str) {
+	public static void Stringsplit(String Str) 
+	{
 		List<String> lst = new ArrayList<String>(5);
 		Str = Str.replaceAll("\\s","");
 		Str = Str.replaceAll("=","#");
@@ -84,5 +84,28 @@ public class Interpreter
             		lst.add(val);
             	}
 	}
+	private  HashMap<String, Commande> listedescommande=new HashMap<String, Commande>();
+	/*
+	 * methode qui permet une fois retrouver le nom d'une commande de
+	 * de l'executer
+	 */
+	public void executeCommand (String name) 
+	{
+		//System.out.println("entrer dans execute");
+		 Commande usercommand = listedescommande.get(name);
+	        if (usercommand == null) {
+	        	//System.out.println("erreur de commande");
+	            
+	        }
+	        usercommand.execute();
+	        //System.out.println("passe apres interpretreur");
+	}
+	/*
+	 * methode permettant d'ajouter une commande
+	 */
+	public void addCommand(String name,Commande command)
+	{		
+		this.listedescommande.put(name, command);
+	}	
 	
 }

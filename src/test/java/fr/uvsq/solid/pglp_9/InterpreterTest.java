@@ -17,7 +17,10 @@ public class InterpreterTest {
 	@Test
 	public void validation_cercle()
 	{	
-		//interpreter.validationCercle("c1=Cercle((01,11),51)");
+		if(interpreter.isMatching("c1=Cercle((01,11),51)"))
+		{
+			Interpreter.Stringsplit("c1=Cercle((01,11),51)");
+		}
 	}
 	
 }
