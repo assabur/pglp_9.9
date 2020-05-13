@@ -6,8 +6,12 @@ import DessinException.ErreurCommandeException;
 
 public class DrawingTUI 
 {
-	Interpreter interpreter=new Interpreter();
-	Scanner reponse=new Scanner(System.in);
+	private Interpreter interpreter=new Interpreter();
+	private Scanner reponse=new Scanner(System.in);
+	/*
+	 * on recupere la saisie de l'user tout en verifiant ci il sagit bien d'une commande valide
+	 * 
+	 */
 	public void nextCommand() throws ErreurCommandeException
 	{		 	
 	do{

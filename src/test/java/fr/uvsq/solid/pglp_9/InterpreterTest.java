@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class InterpreterTest {
 
-	private Interpreter  interpreter;
+	private Interpreter  interpreter=new Interpreter();
 	
 	@Before
 	public void setup()
@@ -19,8 +19,12 @@ public class InterpreterTest {
 	{	
 		if(interpreter.isMatching("c1=Cercle((01,11),51)"))
 		{
-			Interpreter.Stringsplit("c1=Cercle((01,11),51)");
+			for(String a: interpreter.Stringsplit("c1=Cercle((01,11),51)"))
+			{
+				System.out.println(a);;
+			}
 		}
 	}
 	
+
 }
