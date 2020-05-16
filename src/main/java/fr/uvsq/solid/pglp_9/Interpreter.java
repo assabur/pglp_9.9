@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import DessinException.StringException;
+
 public class Interpreter 
 {
 
@@ -15,11 +17,14 @@ public class Interpreter
 	 */
 	private static final String expressionReguliereCommande = ".+=.+";
 	private static final Pattern pattern = Pattern.compile(expressionReguliereCommande);
-	//collection contenant la liste des commandes tapez par l'user
-	//private  HashMap<String, Commande> listedescommande=new HashMap<String, Commande>();
+	//collection contenant la liste des commandes 
+	protected  HashMap<String, Commande> listedescommande=new HashMap<String, Commande>();
 	//parametre des commandes entrés
-	protected HashMap<String, String> parametre=new HashMap<String, String>();
-	
+	protected HashMap<String, Point> parametrePoint=new HashMap<String, Point>();
+	//parametre contenant les valeurs
+	protected HashMap<String, Double> parametreValeur=new HashMap<String,Double>();
+	//parametre variable
+	protected HashMap<String, String> parametreVariable=new HashMap<String, String>();
 	/**
 	 * format generale cercle nom = commande((nombre,nombre),nombre)
 	 */
@@ -66,10 +71,14 @@ public class Interpreter
 	    		*/
 	    		
 	    		
-	    		parametre.put("nom", this.Stringsplit(text).get(0));
-	    		parametre.put("centre_x", this.Stringsplit(text).get(2));
-	    		parametre.put("centre_y", this.Stringsplit(text).get(3));
-	    		parametre.put("rayon", this.Stringsplit(text).get(4));
+	    		parametreVariable.put("variable", this.Stringsplit(text).get(0));
+	    		parametreVariable.put("nom", this.Stringsplit(text).get(1));
+	    		
+	    		parametrePoint.put("centreCercle", new Point
+	    				(Double.parseDouble(this.Stringsplit(text).get(2)),
+	    						Double.parseDouble(	this.Stringsplit(text).get(3) )));
+	    		
+	    		parametreValeur.put("rayon",Double.parseDouble( this.Stringsplit(text).get(4)));
 	    		return true;
 	    	}
 	    	else {
@@ -111,10 +120,31 @@ public class Interpreter
         
 	}
 	/*
+	public boolean stringToDouble(String text) 
+	{
+		try
+		{
+		  Double.parseDouble(text);
+		  return true;
+		}
+		
+		catch (Exception e)
+		{
+			e.getMessage();
+		}
+		finally
+		{
+			return false;
+		}
+	}
+	*/
+	/*
 	 * methode qui permet une fois retrouver le nom d'une commande de
-	 * de l'executer
+	 * de l'executer en prenant en compte les differents parametres en entrés
 	 */
-	public void executeCommand (String name,) 
+	public void executeCommand (String name, HashMap<String, Point> parametrePoint,
+			HashMap<String, String> parametreVariable,HashMap<String, Double> parametreValeur
+			) 
 	{
 		//System.out.println("entrer dans execute");
 		 Commande usercommand = listedescommande.get(name);
@@ -127,9 +157,9 @@ public class Interpreter
 	/*
 	 * methode permettant d'ajouter une commande avec ces differents parametres 
 	 */
-	public void addCommand(String name,HashMap<String, String> parametre)
+	public void addCommand(String name,Commande commande)
 	{		
-		this.listedescommande.put(name, command);
+		this.listedescommande.put(name, commande);
 	}	
 	
 }

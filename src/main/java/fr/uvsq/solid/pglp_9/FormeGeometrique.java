@@ -3,7 +3,7 @@ package fr.uvsq.solid.pglp_9;
  * format generale d'une figure
  */
 
-public abstract class FormeGeometrique {
+public abstract class FormeGeometrique implements SpecificCommand {
 
 	/*
 	 * deplacement d'une figure en abcisse et ordonnées

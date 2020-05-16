@@ -50,4 +50,9 @@ public class Rectangle extends FormeGeometrique {
 		str.append("]");
 		return str.toString();
 
-}}
+}
+
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}}

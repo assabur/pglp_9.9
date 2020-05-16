@@ -38,7 +38,7 @@ public class Cercle extends FormeGeometrique {
 	 * @param dy
 	 *            deplacement en ordonnes.
 	 */
-	@Override
+	
 	public void translate(double dx, double dy) {
 		center.translate(dx, dy);
 	}
@@ -56,5 +56,10 @@ public class Cercle extends FormeGeometrique {
 		str.append(radius);
 		str.append(']');
 		return str.toString();
+	}
+
+	public void execute() {
+		// TODO Auto-generated method stub
+		
 	}
 }
