@@ -7,7 +7,12 @@ public class Cercle extends FormeGeometrique {
 
 	/** Le rayon du cercle */
 	private double radius;
-
+	
+	/*
+	 * le nom du cercle
+	 */
+	
+	private String nom;
 	/**
 	 * Initialise un cercle avec un centre et un rayon.
 	 * 
@@ -16,9 +21,10 @@ public class Cercle extends FormeGeometrique {
 	 * @param radius
 	 *            Le rayon.
 	 */
-	public Cercle(Point center, double radius) {
+	public Cercle(String nom,Point center, double radius) {
 		this.center = center;
 		this.radius = radius;
+		this.nom=nom;
 	}
 
 	/**
@@ -39,7 +45,7 @@ public class Cercle extends FormeGeometrique {
 	 *            deplacement en ordonnes.
 	 */
 	
-	public void translate(double dx, double dy) {
+	public void move(double dx, double dy) {
 		center.translate(dx, dy);
 	}
 
@@ -49,19 +55,26 @@ public class Cercle extends FormeGeometrique {
 	 * @return la representation textuelle du cercle.
 	 */
 	public String toString() {
-		StringBuilder str = new StringBuilder();
+		/*StringBuilder str = new StringBuilder();
 		str.append('[');
 		str.append(center.toString());
 		str.append(", ");
 		str.append(radius);
-		str.append(']');
+		str.append(']');*/
+		StringBuilder str = new StringBuilder();
+		str.append(nom);
+		str.append("(cercle=");
+		str.append(center.toString());
+		str.append(", ");
+		str.append(radius);
+		str.append(")");
 		return str.toString();
+		
 	}
 
-	public void execute() {
-		
-		
-		
+	public void execute() 
+	{
+			
 		
 	}
 }

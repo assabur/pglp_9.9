@@ -6,6 +6,8 @@ public class Carre extends FormeGeometrique{
 
 	/** Coordonnes du coin inferieur droit */
 	private Point upRight;
+	
+	private String nom;
 
 	/**
 	 * Initialise le carre.
@@ -15,10 +17,11 @@ public class Carre extends FormeGeometrique{
 	 * @param downRight
 	 *            Le coin inferieur droit.
 	 */
-	public Carre(Point upLeft, Point upRight) {
+	public Carre(String nom,Point upLeft, Point upRight) {
 		
 		this.upLeft = upLeft;
 		this.upRight = upRight;
+		this.nom=nom;
 	}
 
 	/**
@@ -30,23 +33,25 @@ public class Carre extends FormeGeometrique{
 	 *            deplacement en ordonnes.
 	 */
 	@Override
-	public void translate(double dx, double dy) {
+	public void move(double dx, double dy) {
 		upLeft.translate(dx, dy);
 		upRight.translate(dx, dy);
 	}
 
 	/**
-	 * Retourne une chaine representant l'objet.
+	 * Retourne une chaine representant l'objet carre
 	 * 
 	 * @return la chaïne.
 	 */
 	public String toString() {
+		
 		StringBuilder str = new StringBuilder();
-		str.append("[");
+		str.append(nom);
+		str.append("(carre=");
 		str.append(upLeft.toString());
 		str.append(", ");
 		str.append(upRight.toString());
-		str.append("]");
+		str.append(")");
 		return str.toString();
 
 }

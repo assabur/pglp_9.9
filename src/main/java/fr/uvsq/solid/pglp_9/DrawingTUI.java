@@ -21,6 +21,7 @@ public class DrawingTUI
 		 saisie=reponse.nextLine();
 		if(!interpreter.isMatching(saisie))
 			throw new ErreurCommandeException();
+		interpreter.executeCommand(saisie);
 	}while(true); 
 	
 	}

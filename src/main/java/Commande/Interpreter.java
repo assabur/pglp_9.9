@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import DessinException.ErreurCommandeException;
 import DessinException.StringException;
 import Formes.Point;
 
@@ -26,6 +27,7 @@ public class Interpreter
 	protected HashMap<String, Double> parametreValeur=new HashMap<String,Double>();
 	//parametre variable
 	protected HashMap<String, String> parametreVariable=new HashMap<String, String>();
+	
 	/**
 	 * format generale cercle nom = commande((nombre,nombre),nombre)
 	 */
@@ -54,14 +56,14 @@ public class Interpreter
 	 * Verifie le format du text entrer par l'user
 	 * @param text format enter par l'user
 	 * @return true or false
+	 * @throws ErreurCommandeException 
 	 */
-	public  boolean isMatching(String text)  {
+	public boolean isMatching(String text) throws ErreurCommandeException  {
 		Matcher matcher = pattern.matcher(text);
 		if(matcher.matches())
 			matcher = patterncercle.matcher(text);
 	    	if(matcher.matches())//il sagit d'un cercle
-	    	{	
-	    		/*je choisis de creeer une collection qui specifie les parametres de l'objet a creer
+	    	{	/*je choisis de creeer une collection qui specifie les parametres de l'objet a creer
 	    		 * par exemple pour un cercle on a :
 	    		* 		nom de ma figure=c1
 	    				commande		=Cercle
@@ -70,32 +72,37 @@ public class Interpreter
 	    				rayon du cercle=51
 
 	    		*/
-	    		
-	    		
+	
 	    		parametreVariable.put("variable", this.Stringsplit(text).get(0));
-	    		parametreVariable.put("nom", this.Stringsplit(text).get(1));
-	    		
+	    		parametreVariable.put("nom", this.Stringsplit(text).get(1));	    		
 	    		parametrePoint.put("centreCercle", new Point
 	    				(Double.parseDouble(this.Stringsplit(text).get(2)),
 	    						Double.parseDouble(	this.Stringsplit(text).get(3) )));
 	    		
 	    		parametreValeur.put("rayon",Double.parseDouble( this.Stringsplit(text).get(4)));
+	    		
+	    		//apres avoir decomposé le texte saisi par l'user je lance la fonction init pour initialiser les commandes
+	    		MoteurDessin moteur=new MoteurDessin(parametrePoint, parametreVariable, parametreValeur);
+	    		moteur.init();	    		
+	    		//ensuite j'execute la commande taper taper l'user
+	    		this.executeCommand(parametreVariable.get("nom"));
+	    		
+	    		
+	    		
 	    		return true;
 	    	}
 	    	else {
 	    		matcher = patternrectcarre.matcher(text);
 	    		if(matcher.matches())
-	    			return true;
+	    			return true;//il sagit d'un carre
 	    		else {
 	    			matcher = patterntriangle.matcher(text);
 	    			if(matcher.matches())
-	    				return true;
+	    				return true;//il sagit dun triangle
 		    }
 	    }
 		return false;
 	}
-	
-	
 	/**
 	 * Recupere le nom et la commande et les arguments de la commande
 	 * ecrite par l'utilisateur 
@@ -120,35 +127,17 @@ public class Interpreter
         return list;
         
 	}
-	/*
-	public boolean stringToDouble(String text) 
-	{
-		try
-		{
-		  Double.parseDouble(text);
-		  return true;
-		}
-		
-		catch (Exception e)
-		{
-			e.getMessage();
-		}
-		finally
-		{
-			return false;
-		}
-	}
-	*/
+
 	/*
 	 * methode qui permet une fois retrouver le nom d'une commande de
 	 * de l'executer en prenant en compte les differents parametres en entrés
 	 */
-	public void executeCommand (String name) 
+	public void executeCommand (String name) throws ErreurCommandeException
 	{
 		//System.out.println("entrer dans execute");
 		 Commande usercommand = listedescommande.get(name);
 	        if (usercommand == null) {
-	        	//System.out.println("erreur de commande");            
+	        	throw new  ErreurCommandeException();            
 	        }
 	        usercommand.execute();
 	       

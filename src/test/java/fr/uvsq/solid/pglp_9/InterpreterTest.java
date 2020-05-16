@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Commande.Interpreter;
+import DessinException.ErreurCommandeException;
 
 public class InterpreterTest {
 
@@ -17,7 +18,7 @@ public class InterpreterTest {
 		
 	}
 	@Test
-	public void validation_cercle()
+	public void validation_cercle() throws ErreurCommandeException
 	{	
 		if(interpreter.isMatching("c1=Cercle((01,11),51)"))
 		{

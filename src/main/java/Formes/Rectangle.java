@@ -31,7 +31,7 @@ public class Rectangle extends FormeGeometrique {
 	 *            deplacement en ordonnï¿½es.
 	 */
 	@Override
-	public void translate(double dx, double dy) {
+	public void move(double dx, double dy) {
 		upLeft.translate(dx, dy);
 		downRight.translate(dx, dy);
 	}
@@ -43,13 +43,13 @@ public class Rectangle extends FormeGeometrique {
 	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
-		str.append("[");
+		str.append("nom");
+		str.append("(rectangle");
 		str.append(upLeft.toString());
 		str.append(", ");
 		str.append(downRight.toString());
-		str.append("]");
+		str.append(")");
 		return str.toString();
-
 }
 
 	public void execute() {
