@@ -2,6 +2,7 @@ package fr.uvsq.solid.pglp_9;
 
 import java.util.Scanner;
 
+import Commande.Interpreter;
 import DessinException.ErreurCommandeException;
 
 public class DrawingTUI 

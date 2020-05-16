@@ -3,6 +3,8 @@ package fr.uvsq.solid.pglp_9;
 import org.junit.Before;
 import org.junit.Test;
 
+import Commande.Interpreter;
+
 public class InterpreterTest {
 
 	private Interpreter  interpreter=new Interpreter();
