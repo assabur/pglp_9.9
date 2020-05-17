@@ -1,6 +1,6 @@
 package Formes;
 
-public class Cercle extends FormeGeometrique {
+public class Cercle implements FormeGeometrique {
 
 	/** Le centre du cercle. */
 	private Point center;
@@ -46,7 +46,7 @@ public class Cercle extends FormeGeometrique {
 	 */
 	
 	public void move(double dx, double dy) {
-		center.translate(dx, dy);
+		center.move(dx, dy);
 	}
 
 	/**

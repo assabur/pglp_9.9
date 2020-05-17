@@ -21,7 +21,7 @@ public class DrawingTUI
 		String Commandename="";
 		
 	do{
-		System.out.println("Dessin>");
+		Flash.affiche("Dessin>");
 		String saisie="";		
 		saisie=reponse.nextLine();
 		if(interpreter.isMatching(saisie))
@@ -29,10 +29,11 @@ public class DrawingTUI
 			this.parametre = interpreter.Stringsplit(saisie);
 			Commandename=this.parametre.get(interpreter.gettypeString());
 			interpreter.executeCommand(Commandename.toLowerCase(),this.parametre);
-			if ( interpreter.gettypeString() == 1) {
-				this.show("affiche");
-			
-		}
+			if ( interpreter.gettypeString() == 1) 
+			{
+				//il sagit d'une creation
+				//this.show("affiche");
+			}
 		else
 		{
 			throw new ErreurCommandeException();
@@ -43,10 +44,16 @@ public class DrawingTUI
 	}while(true); 
 	}
 	
-	public void show()
+	public void show(String name)
 	{
+		parametre = this.parametre.subList(0, 1);//je recupere le nom de la commande
 		
+		parametre.add(parametre.get(0));
+		//interpreter.executeCommand(name,parametre);
+
+		//System.out.println("	->"+ContAllFig.get(name));
 	}
+	
 	
 
 }

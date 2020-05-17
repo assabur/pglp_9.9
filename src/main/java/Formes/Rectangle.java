@@ -1,6 +1,6 @@
 package Formes;
 
-public class Rectangle extends FormeGeometrique {
+public class Rectangle implements FormeGeometrique {
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 
@@ -30,10 +30,10 @@ public class Rectangle extends FormeGeometrique {
 	 * @param dy
 	 *            deplacement en ordonnï¿½es.
 	 */
-	@Override
+	
 	public void move(double dx, double dy) {
-		upLeft.translate(dx, dy);
-		downRight.translate(dx, dy);
+		upLeft.move(dx, dy);
+		downRight.move(dx, dy);
 	}
 
 	/**

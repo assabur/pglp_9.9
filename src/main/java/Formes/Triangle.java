@@ -1,6 +1,6 @@
 package Formes;
 
-public class Triangle extends FormeGeometrique{
+public class Triangle implements FormeGeometrique{
 
 	
 	private String name;
@@ -76,11 +76,13 @@ public class Triangle extends FormeGeometrique{
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
+
 	public void move(double dx, double dy) {
-		this.sommet.translate(dx, dy);
-		downLeft.translate(dx, dy);
-		downRight.translate(dx, dy);
+		this.sommet.move(dx, dy);
+		downLeft.move(dx, dy);
+		downRight.move(dx, dy);
+		
 	}
+	
 
 }

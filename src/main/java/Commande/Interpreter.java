@@ -65,7 +65,8 @@ public class Interpreter
 	 */
 	public static boolean isMatching(String text)  {
 		Matcher matcher = pattern.matcher(text);
-		if(matcher.matches()) {//verifie si cest une creation
+		//verifie si cest une creation
+		if(matcher.matches()) {
 			TYPE = 1;
 			matcher = patterncercle.matcher(text);
 			if(matcher.matches())
@@ -177,7 +178,7 @@ public class Interpreter
 	        if (usercommand == null) {
 	        	throw new  ErreurCommandeException();            
 	        }
-	        usercommand.execute();
+	        usercommand.execute(parametre);
 	       
 	}
 	

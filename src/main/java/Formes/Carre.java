@@ -1,13 +1,13 @@
 package Formes;
 
-public class Carre extends FormeGeometrique{
+public class Carre implements FormeGeometrique{
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 
 	/** Coordonnes du coin inferieur droit */
 	private Point upRight;
 	
-	private String nom;
+	private String nom; 
 
 	/**
 	 * Initialise le carre.
@@ -32,10 +32,10 @@ public class Carre extends FormeGeometrique{
 	 * @param dy
 	 *            deplacement en ordonnes.
 	 */
-	@Override
+
 	public void move(double dx, double dy) {
-		upLeft.translate(dx, dy);
-		upRight.translate(dx, dy);
+		upLeft.move(dx, dy);
+		upRight.move(dx, dy);
 	}
 
 	/**

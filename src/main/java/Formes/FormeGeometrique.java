@@ -5,7 +5,7 @@ package Formes;
 
 import Commande.SpecificCommand;
 
-public abstract class FormeGeometrique implements SpecificCommand {
+public interface  FormeGeometrique  {
 
 	/*
 	 * deplacement d'une figure en abcisse et ordonnées

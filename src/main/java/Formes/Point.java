@@ -1,6 +1,6 @@
 package Formes;
 
-public class Point {
+public class Point implements FormeGeometrique {
 	
 	
 	/** L'abscisse du point. */
@@ -41,14 +41,15 @@ public class Point {
 	}
 
 	/**
-	 * Translate le point.
+	 * Translation d'un point.
 	 * 
 	 * @param dx
 	 *            deplacement en abscisse.
 	 * @param dy
 	 *            deplacement en ordonnï¿½es.
 	 */
-	public void translate(double dx, double dy) {
+	public void move(double dx, double dy) 
+	{
 		x += dx;
 		y += dy;
 	}
@@ -68,4 +69,5 @@ public class Point {
 		return str.toString();
 	}
 
+	
 }
