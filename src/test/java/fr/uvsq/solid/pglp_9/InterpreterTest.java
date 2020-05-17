@@ -9,15 +9,17 @@ import DessinException.ErreurCommandeException;
 public class InterpreterTest {
 
 	private Interpreter  interpreter=new Interpreter();
-	
+	private DrawingTUI drawing= new DrawingTUI();
 	@Before
 	public void setup()
 	{
 		//
 		interpreter=new Interpreter();
+	
+		
 		
 	}
-	@Test
+	/*@Test
 	public void validation_cercle() throws ErreurCommandeException
 	{	
 		if(interpreter.isMatching("c1=Cercle((01,11),51)"))
@@ -28,6 +30,11 @@ public class InterpreterTest {
 			}
 		}
 	}
+	*/
+	@Test
+	public void testNextCommand() throws ErreurCommandeException
+	{	
+		drawing.nextCommand();
 	
-
+	}
 }

@@ -55,12 +55,7 @@ public class Cercle extends FormeGeometrique {
 	 * @return la representation textuelle du cercle.
 	 */
 	public String toString() {
-		/*StringBuilder str = new StringBuilder();
-		str.append('[');
-		str.append(center.toString());
-		str.append(", ");
-		str.append(radius);
-		str.append(']');*/
+	
 		StringBuilder str = new StringBuilder();
 		str.append(nom);
 		str.append("(cercle=");

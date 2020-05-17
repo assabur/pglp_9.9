@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 
 		public static void affiche(String text)
 		{
-			System.out.println(LocalDateTime.now()+": "+text);
+			System.out.println("Warning "+ ": "+text);
 		}
 }
