@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import Commande.Interpreter;
+import Commande.VerificationSaisie;
 import DessinException.ErreurCommandeException;
 
 public class DrawingTUI 
@@ -12,6 +13,7 @@ public class DrawingTUI
 	private Interpreter interpreter=new Interpreter();
 	private Scanner reponse=new Scanner(System.in);
 	private List<String> parametre=new ArrayList<String>();
+	
 	/*
 	 * on recupere la saisie de l'user tout en verifiant ci il sagit bien d'une commande valide
 	 * 
@@ -24,12 +26,12 @@ public class DrawingTUI
 		Flash.affiche("Dessin>");
 		String saisie="";		
 		saisie=reponse.nextLine();
-		if(interpreter.isMatching(saisie))
+		if(VerificationSaisie.verificationSaisieUser(saisie))
 		{
-			this.parametre = interpreter.Stringsplit(saisie);
-			Commandename=this.parametre.get(interpreter.gettypeString());
+			this.parametre = interpreter.DecoupeChaine(saisie);
+			Commandename=this.parametre.get(VerificationSaisie.gettypeString());
 			interpreter.executeCommand(Commandename.toLowerCase(),this.parametre);
-			if ( interpreter.gettypeString() == 1) 
+			if ( VerificationSaisie.gettypeString() == 1) 
 			{
 				//il sagit d'une creation
 				//this.show("affiche");
@@ -47,7 +49,7 @@ public class DrawingTUI
 	public void show(String name)
 	{
 		parametre = this.parametre.subList(0, 1);//je recupere le nom de la commande
-		
+		 
 		parametre.add(parametre.get(0));
 		//interpreter.executeCommand(name,parametre);
 

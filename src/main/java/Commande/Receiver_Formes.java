@@ -21,4 +21,12 @@ public class Receiver_Formes
 	{
 	
 	}
+	public void getMove(List<String> parametre)
+	{
+	
+	}
+	public void getQuit()
+	{
+	
+	}
 }

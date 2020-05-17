@@ -5,20 +5,21 @@ import java.util.HashMap;
 import Formes.Carre;
 import Formes.Cercle;
 import Formes.Point;
-
-public class MoteurDessin {
+/*
+ * classe constitituant le coeur de lappli en effet il contient la methode init qui permet
+ *  d'initialiser l'ensemble des commandes
+ */
+public class MoteurDessin 
+{
 	
-
-
-	private static GenericCommande genericProg;
-	private static GenericCommande quitprog;
-
-	private static SpecificCommand Cercle;
-	private static SpecificCommand Rectangle;
-	private static SpecificCommand carre;
-	private static SpecificCommand Triangle;
+	//private static GenericCommande genericProg;
+	private static CmdQuit quitprog;
+	private static CmdCercle Cercle;
+	private static CmdRectangle Rectangle;
+	private static CmdCarre Carre;
+	private static CmdTriangle Triangle;
 	private static Receiver_Formes receiver;
-	private static CmdMove move;
+	private static CmdMove Move;
 	private static CmdShow affich;
 
 	/**
@@ -26,33 +27,23 @@ public class MoteurDessin {
 	 */
 	public static Interpreter init() 
 	{
-		Interpreter inter = new Interpreteur();
+		Interpreter interpreteur = new Interpreter();
+		quitprog=new CmdQuit(receiver);
+		Cercle = new CmdCercle(receiver);
+		Rectangle = new CmdRectangle(receiver);
+		Triangle = new CmdTriangle(receiver);
+		Carre=new CmdCarre(receiver);
+		Move = new CmdMove(receiver);
+		affich = new CmdShow(receiver);
+		interpreteur.addCommand("cercle", Cercle);
+		interpreteur.addCommand("rectangle", Rectangle);
+		interpreteur.addCommand("triangle", Triangle);
+		interpreteur.addCommand("carre", Carre);
+		interpreteur.addCommand("move", Move);
+		interpreteur.addCommand("show", affich);
+		interpreteur.addCommand("quit", quitprog);
 
-		genericProg=new Generic();
-		quitprog = new CommandQuit(genericProg);
-
-		receiver = new Specific();
-
-		createCercle = new CommandeCercle(receiver);
-
-		createRectangle = new CommandRectangle(receiver);
-
-		createTriangle = new CommandTriangle(receiver);
-
-		move = new CommandMove(receiver);
-
-		affich = new CommandAffichage(receiver);
-
-		inter.register("quit", quitprog);
-		inter.register("cercle", createCercle);
-		inter.register("rectangle", createRectangle);
-		//inter.register("carre", createFig);
-		inter.register("triangle", createTriangle);
-		//inter.register("groupe", createFig);
-		inter.register("move", move);
-		inter.register("affiche", affich);
-
-		return inter;
+		return interpreteur;
 	}
 	 
   
