@@ -34,6 +34,7 @@ public class ConnectionDerby {
 		}
 		catch (ClassNotFoundException e) 
 		{
+			//System.out.println();
 			Flash.affiche(e.getMessage());
 			Flash.affiche("ERREUR : charger derby.jdbc.EmbeddedDriver ");	       
 	    }

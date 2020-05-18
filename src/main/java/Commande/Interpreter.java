@@ -10,6 +10,7 @@ import DessinException.ErreurCommandeException;
 import DessinException.StringException;
 import Formes.Cercle;
 import Formes.Point;
+import fr.uvsq.solid.pglp_9.Flash;
 /*
  * Interprete les commandes entre par l'user
  */
@@ -18,7 +19,7 @@ public class Interpreter
 	/*
 	 * Liste des commandes possibles
 	 */
-	private HashMap<String, Commande>listedescommande=new HashMap<String, Commande>();
+	private final HashMap<String, Commande>listedescommande=new HashMap<String, Commande>();
 	/**
 	 * Recupere le nom et la commande et les arguments de la commande
 	 * ecrite par l'utilisateur 
@@ -46,18 +47,16 @@ public class Interpreter
 	 * methode qui permet une fois retrouver le nom d'une commande de
 	 * de l'executer en prenant en compte les differents parametres en entrés
 	 */
-	public void executeCommand (String name,List<String> parametre) throws ErreurCommandeException
+	public void executeCommand (String name,List<String> parametre) 
 	{
-		//System.out.println("entrer dans execute");
-		 Commande usercommand = listedescommande.get(name);
-	        if (usercommand == null) {
-	        	throw new  ErreurCommandeException();            
-	        }
-	        usercommand.execute(parametre);
-	       
+	        try {
+	        	Commande usercommand = listedescommande.get(name);
+	        	usercommand.execute(parametre);	 
+			} catch (Exception e) {
+				Flash.affiche("commande non valide");
+			}
+	              
 	}
-	
-	
 	
 	/*
 	 * methode permettant d'ajouter une commande avec ces differents parametres 
@@ -66,6 +65,48 @@ public class Interpreter
 	{		
 		this.listedescommande.put(name, commande);
 	}	
+	public void afficheCommande()
+	{
+		
+		System.out.println(listedescommande.get("carre"));
+		System.out.println(listedescommande.get("cercle"));
+	}
+	
+	
+	//mes differentes commandes
+		private static CmdQuit quitprog;
+		private static CmdCercle Cercle;
+		private static CmdRectangle Rectangle;
+		private static CmdCarre Carre;
+		private static CmdTriangle Triangle;
+		private static Receiver_Formes receiver;
+		private static CmdMove Move;
+		private static CmdShow affich;
+		
+
+		/**
+		 * Initialise les commandes
+		 */
+		public static Interpreter init() 
+		{
+			Interpreter interpreteur = new Interpreter();			
+			quitprog=new CmdQuit(receiver);
+			Cercle = new CmdCercle(receiver);
+			Rectangle = new CmdRectangle(receiver);
+			Triangle = new CmdTriangle(receiver);
+			Carre=new CmdCarre(receiver);
+			Move = new CmdMove(receiver);
+			affich = new CmdShow(receiver);
+			interpreteur.addCommand("cercle", Cercle);
+			interpreteur.addCommand("rectangle", Rectangle);
+			interpreteur.addCommand("triangle", Triangle);
+			interpreteur.addCommand("carre", Carre);
+			interpreteur.addCommand("move", Move);
+			interpreteur.addCommand("show", affich);
+			interpreteur.addCommand("quit", quitprog);
+
+			return interpreteur;
+		}
 	
 }
 

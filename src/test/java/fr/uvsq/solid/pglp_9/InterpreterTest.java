@@ -34,7 +34,7 @@ public class InterpreterTest {
 	@Test
 	public void testNextCommand() throws ErreurCommandeException
 	{	
-		drawing.nextCommand();
+		//drawing.nextCommand();
 	
 	}
 }

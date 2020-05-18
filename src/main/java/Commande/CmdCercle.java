@@ -14,7 +14,4 @@ public class CmdCercle implements SpecificCommand{
 	{
 			receiver.getCercle(parametre);
 	}
-
-	
-
 }

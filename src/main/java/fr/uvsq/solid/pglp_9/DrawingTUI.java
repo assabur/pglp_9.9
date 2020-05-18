@@ -5,45 +5,42 @@ import java.util.List;
 import java.util.Scanner;
 
 import Commande.Interpreter;
+import Commande.MoteurDessin;
 import Commande.VerificationSaisie;
 import DessinException.ErreurCommandeException;
 
 public class DrawingTUI 
 {
 	private Interpreter interpreter=new Interpreter();
-	private Scanner reponse=new Scanner(System.in);
+	//c1=cercle((1,1),2)
 	private List<String> parametre=new ArrayList<String>();
 	
 	/*
 	 * on recupere la saisie de l'user tout en verifiant ci il sagit bien d'une commande valide
 	 * 
 	 */
-	public void nextCommand() throws ErreurCommandeException
+	public void nextCommand(String chaineUser) 
 	{	
 		String Commandename="";
+		//j'initialise l'ensemble de mes commandes
+		Interpreter.init();
 		
-	do{
-		Flash.affiche("Dessin>");
-		String saisie="";		
-		saisie=reponse.nextLine();
-		if(VerificationSaisie.verificationSaisieUser(saisie))
+		if(VerificationSaisie.verificationSaisieUser(chaineUser))
 		{
-			this.parametre = interpreter.DecoupeChaine(saisie);
-			Commandename=this.parametre.get(VerificationSaisie.gettypeString());
+			interpreter.afficheCommande();
+			this.parametre = interpreter.DecoupeChaine(chaineUser);
+			Commandename=this.parametre.get(1);
+			Flash.affiche(Commandename.toLowerCase());
 			interpreter.executeCommand(Commandename.toLowerCase(),this.parametre);
 			if ( VerificationSaisie.gettypeString() == 1) 
-			{
-				//il sagit d'une creation
-				//this.show("affiche");
+				{
+				
+				}
 			}
 		else
 		{
-			throw new ErreurCommandeException();
-		}
-		
-	}
-	
-	}while(true); 
+			Flash.affiche("commande non valide");
+		}		
 	}
 	
 	public void show(String name)
