@@ -50,8 +50,11 @@ public class Interpreter
 	public void executeCommand (String name,List<String> parametre) 
 	{
 	        try {
+	        	//System.out.println("dans execute commande  "+name);
 	        	Commande usercommand = listedescommande.get(name);
+	        	
 	        	usercommand.execute(parametre);	 
+	        	//System.out.println("dans execute commande  "+name);
 			} catch (Exception e) {
 				Flash.affiche("commande non valide");
 			}
@@ -65,12 +68,11 @@ public class Interpreter
 	{		
 		this.listedescommande.put(name, commande);
 	}	
-	public void afficheCommande()
-	{
-		
+	/*public void afficheCommande()
+	{	
 		System.out.println(listedescommande.get("carre"));
 		System.out.println(listedescommande.get("cercle"));
-	}
+	}*/
 	
 	
 	//mes differentes commandes

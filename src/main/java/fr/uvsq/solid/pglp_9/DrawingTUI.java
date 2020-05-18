@@ -27,7 +27,7 @@ public class DrawingTUI
 		
 		if(VerificationSaisie.verificationSaisieUser(chaineUser))
 		{
-			interpreter.afficheCommande();
+			//interpreter.afficheCommande();
 			this.parametre = interpreter.DecoupeChaine(chaineUser);
 			Commandename=this.parametre.get(1);
 			Flash.affiche(Commandename.toLowerCase());
@@ -48,9 +48,7 @@ public class DrawingTUI
 		parametre = this.parametre.subList(0, 1);//je recupere le nom de la commande
 		 
 		parametre.add(parametre.get(0));
-		//interpreter.executeCommand(name,parametre);
-
-		//System.out.println("	->"+ContAllFig.get(name));
+		
 	}
 	
 	
