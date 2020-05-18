@@ -10,7 +10,7 @@ public class CmdCercle implements SpecificCommand{
 	{
 		this.receiver=receiver;
 	}
-	public void execute(List<String> parametre)
+	public void execute(List <String> parametre)
 	{
 			receiver.getCercle(parametre);
 	}

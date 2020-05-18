@@ -52,7 +52,7 @@ public class Interpreter
 	        try {
 	        	//System.out.println("dans execute commande  "+name);
 	        	Commande usercommand = listedescommande.get(name);
-	        	
+	        	//ici je cree un o
 	        	usercommand.execute(parametre);	 
 	        	//System.out.println("dans execute commande  "+name);
 			} catch (Exception e) {
@@ -111,6 +111,3 @@ public class Interpreter
 		}
 	
 }
-
-
-

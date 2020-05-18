@@ -30,7 +30,7 @@ public class DrawingTUI
 			//interpreter.afficheCommande();
 			this.parametre = interpreter.DecoupeChaine(chaineUser);
 			Commandename=this.parametre.get(1);
-			Flash.affiche(Commandename.toLowerCase());
+			//Flash.affiche(Commandename.toLowerCase());
 			interpreter.executeCommand(Commandename.toLowerCase(),this.parametre);
 			if ( VerificationSaisie.gettypeString() == 1) 
 				{
