@@ -31,6 +31,6 @@ public class Receiver_Formes
 	}
 	public void getQuit()
 	{
-	
+		System.exit(-1);
 	}
 }

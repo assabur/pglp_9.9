@@ -1,6 +1,6 @@
 package Formes;
 
-public class Rectangle implements FormeGeometrique {
+public class Rectangle extends FormeGeometrique {
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 

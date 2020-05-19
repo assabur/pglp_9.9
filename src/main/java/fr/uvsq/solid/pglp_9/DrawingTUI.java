@@ -11,7 +11,8 @@ import DessinException.ErreurCommandeException;
 
 public class DrawingTUI 
 {
-	private Interpreter interpreter=new Interpreter();
+	//j'initialise l'ensemble de mes commandes
+	private Interpreter interpreter=Interpreter.init();
 	//c1=cercle((1,1),2)
 	private List<String> parametre=new ArrayList<String>();
 	
@@ -22,9 +23,6 @@ public class DrawingTUI
 	public void nextCommand(String chaineUser) 
 	{	
 		String Commandename="";
-		//j'initialise l'ensemble de mes commandes
-		Interpreter.init();
-		
 		if(VerificationSaisie.verificationSaisieUser(chaineUser))
 		{
 			//interpreter.afficheCommande();
@@ -32,10 +30,7 @@ public class DrawingTUI
 			Commandename=this.parametre.get(1);
 			//Flash.affiche(Commandename.toLowerCase());
 			interpreter.executeCommand(Commandename.toLowerCase(),this.parametre);
-			if ( VerificationSaisie.gettypeString() == 1) 
-				{
-				
-				}
+			
 			}
 		else
 		{

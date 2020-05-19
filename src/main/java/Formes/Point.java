@@ -1,6 +1,6 @@
 package Formes;
 
-public class Point implements FormeGeometrique {
+public class Point extends FormeGeometrique {
 	
 	
 	/** L'abscisse du point. */

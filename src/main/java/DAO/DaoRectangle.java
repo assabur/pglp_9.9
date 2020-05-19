@@ -14,7 +14,7 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 
 	@Override
 	public boolean create(Rectangle obj) {
-		// TODO Auto-generated method stub
+		// TODO Auto-genera ted method stub
 		return false;
 	}
 

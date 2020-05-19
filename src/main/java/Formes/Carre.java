@@ -1,6 +1,6 @@
 package Formes;
 
-public class Carre implements FormeGeometrique{
+public class Carre extends FormeGeometrique{
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 

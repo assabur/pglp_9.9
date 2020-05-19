@@ -19,7 +19,7 @@ public class Interpreter
 	/*
 	 * Liste des commandes possibles
 	 */
-	private final HashMap<String, Commande>listedescommande=new HashMap<String, Commande>();
+	private final HashMap<String,Commande>listedescommande=new HashMap<String, Commande>();
 	/**
 	 * Recupere le nom et la commande et les arguments de la commande
 	 * ecrite par l'utilisateur 
@@ -29,7 +29,7 @@ public class Interpreter
 	{
 		List<String> list = new ArrayList<String>(5);//je decompose la saisie de l'user
 		Str = Str.replaceAll("\\s","");
-		Str = Str.replaceAll("=","#");
+		Str = Str.replaceAll("=","#"); 
 		Str = Str.replaceAll("\\(","#");
 		Str = Str.replaceAll("\\)","#");
 		Str = Str.replaceAll(",","#");
@@ -52,10 +52,11 @@ public class Interpreter
 	        try {
 	        	//System.out.println("dans execute commande  "+name);
 	        	Commande usercommand = listedescommande.get(name);
-	        	//ici je cree un o
+	        	//System.out.println("avant execute");
 	        	usercommand.execute(parametre);	 
 	        	//System.out.println("dans execute commande  "+name);
 			} catch (Exception e) {
+				//System.out.println("dans catcch");
 				Flash.affiche("commande non valide");
 			}
 	              
@@ -75,38 +76,33 @@ public class Interpreter
 	}*/
 	
 	
-	//mes differentes commandes
-		private static CmdQuit quitprog;
-		private static CmdCercle Cercle;
-		private static CmdRectangle Rectangle;
-		private static CmdCarre Carre;
-		private static CmdTriangle Triangle;
-		private static Receiver_Formes receiver;
-		private static CmdMove Move;
-		private static CmdShow affich;
+	
 		
 
 		/**
 		 * Initialise les commandes
 		 */
-		public static Interpreter init() 
+		public  static Interpreter init() 
 		{
+			//mes differentes commandes
+			 Receiver_Formes receiver=new Receiver_Formes();
+			 CmdQuit quitprog=new CmdQuit(receiver);
+			 CmdCercle Cercle=new CmdCercle(receiver);
+			 CmdRectangle Rectangle=new CmdRectangle(receiver);
+			 CmdCarre Carre=new CmdCarre(receiver);		
+			 CmdTriangle Triangle=new CmdTriangle(receiver);
+			
+			 CmdMove Move=new CmdMove(receiver);
+			 CmdShow affich=new CmdShow(receiver);
 			Interpreter interpreteur = new Interpreter();			
-			quitprog=new CmdQuit(receiver);
-			Cercle = new CmdCercle(receiver);
-			Rectangle = new CmdRectangle(receiver);
-			Triangle = new CmdTriangle(receiver);
-			Carre=new CmdCarre(receiver);
-			Move = new CmdMove(receiver);
-			affich = new CmdShow(receiver);
-			interpreteur.addCommand("cercle", Cercle);
-			interpreteur.addCommand("rectangle", Rectangle);
-			interpreteur.addCommand("triangle", Triangle);
-			interpreteur.addCommand("carre", Carre);
-			interpreteur.addCommand("move", Move);
-			interpreteur.addCommand("show", affich);
-			interpreteur.addCommand("quit", quitprog);
-
+			
+			 interpreteur.addCommand("cercle", Cercle);
+			 interpreteur.addCommand("rectangle", Rectangle);
+			 interpreteur.addCommand("triangle", Triangle);
+			 interpreteur.addCommand("carre", Carre);
+			 interpreteur.addCommand("move", Move);
+			 interpreteur.addCommand("show", affich);
+			 interpreteur.addCommand("quit", quitprog);
 			return interpreteur;
 		}
 	

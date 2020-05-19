@@ -1,6 +1,6 @@
 package Formes;
 
-public class Cercle implements FormeGeometrique {
+public class Cercle extends FormeGeometrique {
 
 	/** Le centre du cercle. */
 	private Point center;

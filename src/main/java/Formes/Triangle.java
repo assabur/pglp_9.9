@@ -1,6 +1,6 @@
 package Formes;
 
-public class Triangle implements FormeGeometrique{
+public class Triangle extends FormeGeometrique{
 
 	
 	private String name;

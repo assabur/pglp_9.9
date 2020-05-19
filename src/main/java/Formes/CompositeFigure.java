@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CompositeFigure implements FormeGeometrique
+public class CompositeFigure extends FormeGeometrique
 {
 
 	public void move(double dx, double dy)
