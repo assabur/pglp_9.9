@@ -7,7 +7,7 @@ import java.util.List;
 public class CompositeFigure extends FormeGeometrique
 {
 
-	public void move(double dx, double dy)
+	public void move(int dx, int dy)
 	{
 	}
 	private String name;

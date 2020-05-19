@@ -6,7 +6,7 @@ public class Cercle extends FormeGeometrique {
 	private Point center;
 
 	/** Le rayon du cercle */
-	private double radius;
+	private int radius;
 	
 	/*
 	 * le nom du cercle
@@ -21,7 +21,8 @@ public class Cercle extends FormeGeometrique {
 	 * @param radius
 	 *            Le rayon.
 	 */
-	public Cercle(String nom,Point center, double radius) {
+	public Cercle(String nom,Point center, int radius)
+	{
 		this.center = center;
 		this.radius = radius;
 		this.nom=nom;
@@ -32,9 +33,16 @@ public class Cercle extends FormeGeometrique {
 	 * 
 	 * @return le rayon du cercle.
 	 */
-	public double getRadius() {
+	public int getRadius() {
 		return radius;
 	}
+	/*
+	 * retourne le nom de la variable(du cercle)
+	 */
+	public String getname() {
+		return nom;
+	}
+
 
 	/**
 	 * Translate le cercle.
@@ -45,7 +53,7 @@ public class Cercle extends FormeGeometrique {
 	 *            deplacement en ordonnes.
 	 */
 	
-	public void move(double dx, double dy) {
+	public void move(int dx, int dy) {
 		center.move(dx, dy);
 	}
 

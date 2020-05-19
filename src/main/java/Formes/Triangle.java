@@ -77,7 +77,7 @@ public class Triangle extends FormeGeometrique{
 		
 	}
 
-	public void move(double dx, double dy) {
+	public void move(int dx, int dy) {
 		this.sommet.move(dx, dy);
 		downLeft.move(dx, dy);
 		downRight.move(dx, dy);

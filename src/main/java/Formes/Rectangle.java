@@ -31,7 +31,7 @@ public class Rectangle extends FormeGeometrique {
 	 *            deplacement en ordonnï¿½es.
 	 */
 	
-	public void move(double dx, double dy) {
+	public void move(int dx, int dy) {
 		upLeft.move(dx, dy);
 		downRight.move(dx, dy);
 	}

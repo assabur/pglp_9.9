@@ -9,8 +9,8 @@ public class DaoFActory {
 		 * Retourne le DAO des Triangles
 		 * @return DAOTriagle
 		 */
-		public static DaoTriangle getTriangleDAO(){
-			return new DaoTriangle(conn);
+		public static DaoTriangle getTriangleDAO(String variable){
+			return new DaoTriangle(conn,variable);
 		}
 		
 		public static DaoComposite getCompositePerso(){
@@ -22,6 +22,7 @@ public class DaoFActory {
 		 * @return DaoCercle
 		 */
 		public static DaoCercle getCerlcleDAO(){
+			System.out.println(" entrer dans get cercleDAO");
 			return new DaoCercle(conn);
 		}
 
@@ -29,11 +30,9 @@ public class DaoFActory {
 		 * Retourne le DAO des Rectangles
 		 * @return DaoRectangle
 		 */
-		public static DaoRectangle getRectangleDAO(){
-			return new DaoRectangle(conn);
+		public static DaoRectangle getRectangleDAO(String variable){
+			return new DaoRectangle(conn,variable);
 	
-
-		
 	}
 
 }

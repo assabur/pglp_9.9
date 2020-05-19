@@ -76,9 +76,6 @@ public class Interpreter
 	}*/
 	
 	
-	
-		
-
 		/**
 		 * Initialise les commandes
 		 */
@@ -103,6 +100,7 @@ public class Interpreter
 			 interpreteur.addCommand("move", Move);
 			 interpreteur.addCommand("show", affich);
 			 interpreteur.addCommand("quit", quitprog);
+			 interpreteur.addCommand("compose", quitprog);
 			return interpreteur;
 		}
 	

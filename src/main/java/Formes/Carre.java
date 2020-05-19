@@ -33,7 +33,7 @@ public class Carre extends FormeGeometrique{
 	 *            deplacement en ordonnes.
 	 */
 
-	public void move(double dx, double dy) {
+	public void move(int dx, int dy) {
 		upLeft.move(dx, dy);
 		upRight.move(dx, dy);
 	}

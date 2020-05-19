@@ -6,12 +6,7 @@ import org.junit.Test;
 import DAO.ConnectionDerby;
 
 public class BdConnexionTest {
-	
-	@Before
-	public void setup()
-	{
-			
-	}
+
 	@Test
 	public void test_connexion()
 	{	

@@ -4,10 +4,10 @@ public class Point extends FormeGeometrique {
 	
 	
 	/** L'abscisse du point. */
-	private double x;
+	private int x;
 
 	/** L'ordonné du point. */
-	private double y;
+	private int y;
 
 	/**
 	 * Initialise un point à partir de deux coordonnés.
@@ -17,7 +17,7 @@ public class Point extends FormeGeometrique {
 	 * @param y
 	 *            l'ordonne du point.
 	 */
-	public Point(double x, double y) {
+	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -48,7 +48,7 @@ public class Point extends FormeGeometrique {
 	 * @param dy
 	 *            deplacement en ordonnï¿½es.
 	 */
-	public void move(double dx, double dy) 
+	public void move(int dx, int dy) 
 	{
 		x += dx;
 		y += dy;
