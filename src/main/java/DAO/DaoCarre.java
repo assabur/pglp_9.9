@@ -18,7 +18,7 @@ public class DaoCarre extends DAO_Figure<Carre>{
 	}
 
 	@Override
-	public Carre read(String name) {
+	public Carre read(Object name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

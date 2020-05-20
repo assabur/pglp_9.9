@@ -47,18 +47,23 @@ public class Interpreter
 	 * methode qui permet une fois retrouver le nom d'une commande de
 	 * de l'executer en prenant en compte les differents parametres en entrés
 	 */
-	public void executeCommand (String name,List<String> parametre) 
-	{
+	public Commande executeCommand (String name,List<String> parametre) 
+	{	
+		Commande usercommand = listedescommande.get(name);
+	
 	        try {
-	        	//System.out.println("dans execute commande  "+name);
-	        	Commande usercommand = listedescommande.get(name);
-	        	//System.out.println("avant execute");
-	        	usercommand.execute(parametre);	 
-	        	//System.out.println("dans execute commande  "+name);
-			} catch (Exception e) {
-				//System.out.println("dans catcch");
+	        	if(usercommand!=null)
+	        	{
+	        		System.out.println("dans execute commande");
+		        	usercommand.execute(parametre);	
+		        	return usercommand;
+	        	}
+	        	return  null;
+	        	
+			} catch (Exception e) {			
 				Flash.affiche("commande non valide");
 			}
+	        return null;
 	              
 	}
 	

@@ -12,10 +12,9 @@ import java.util.ArrayList;
  */
 public abstract class DAO_Figure <T> {
 	
-	protected Connection connect;
-	 public String nomBd;
-	  public static Connection conn = null;
-	  ArrayList<Statement> statements = new ArrayList<Statement>();
+	
+	  public String nomBd;
+	  public static Connection conn =ConnectionDerby.connection();
 	  /*
 	   * je definis l'ensemble des requetes preparés
 	   */
@@ -23,18 +22,18 @@ public abstract class DAO_Figure <T> {
 	  protected PreparedStatement psUpdate;
 	  protected PreparedStatement psSelect;
 	  protected ResultSet rs = null;
-	  protected static final String SQL_SERIALIZE_OBJECT = "INSERT INTO DessinDB(nom, objet) VALUES (?,?)";
-	  protected static final String SQL_DESERIALIZE_OBJECT = "SELECT * FROM DessinDB WHERE nom = ?";
-	  protected static final String SQL_UPDATE_OBJECT = "UPDATE DessinDB set objet = ?  WHERE nom = ?";
-	  protected static final String SQL_DELETE_OBJECT = "DELETE FROM DessinDB WHERE nom = ?";
-	  public DAO_Figure(Connection connect)
-		
+	  protected static final String SQL_SERIALIZE_OBJECT = "INSERT INTO forme(nom, objet) VALUES (?,?)";
+	  protected static final String SQL_DESERIALIZE_OBJECT = "SELECT * FROM forme WHERE nom = ?";
+	  protected static final String SQL_UPDATE_OBJECT = "UPDATE forme set objet = ?  WHERE nom = ?";
+	  protected static final String SQL_DELETE_OBJECT = "DELETE FROM forme WHERE nom = ?";
+	 
+	  public DAO_Figure(Connection connect)	
 	  {
-			this.connect=connect;
+			this.conn=connect;
 	  }
 	
 	public abstract boolean create(T obj);
-	public abstract T read(String name);
+	public abstract T read(Object monObjet);
 	public abstract boolean update(T obj);
 	public abstract boolean delete(String name);
 

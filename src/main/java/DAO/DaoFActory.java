@@ -5,6 +5,7 @@ import java.sql.Connection;
 public class DaoFActory {
 
 	private final static Connection conn=ConnectionDerby.connection();
+	//ConnectionDerby.connection();
 		/**
 		 * Retourne le DAO des Triangles
 		 * @return DAOTriagle
@@ -22,7 +23,7 @@ public class DaoFActory {
 		 * @return DaoCercle
 		 */
 		public static DaoCercle getCerlcleDAO(){
-			System.out.println(" entrer dans get cercleDAO");
+			//System.out.println(" entrer dans get cercleDAO");
 			return new DaoCercle(conn);
 		}
 

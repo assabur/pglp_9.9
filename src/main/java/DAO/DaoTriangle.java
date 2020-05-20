@@ -25,7 +25,7 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 			 * j'initialise ma requette preparé
 			 */
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			statements.add(psInsert);
+			//statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
 			 */
@@ -57,7 +57,7 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 	}
 
 	@Override
-	public Triangle read(String name) {
+	public Triangle read( Object monObjet) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,6 +1,8 @@
 package Formes;
 
-public class Cercle extends FormeGeometrique {
+import java.io.Serializable;
+
+public class Cercle extends FormeGeometrique implements Serializable{
 
 	/** Le centre du cercle. */
 	private Point center;
@@ -66,11 +68,11 @@ public class Cercle extends FormeGeometrique {
 	
 		StringBuilder str = new StringBuilder();
 		str.append(nom);
-		str.append("(cercle=");
+		str.append("(cercle= centre");
 		str.append(center.toString());
-		str.append(", ");
+		str.append(", Rayon(");
 		str.append(radius);
-		str.append(")");
+		str.append("))");
 		return str.toString();
 		
 	}

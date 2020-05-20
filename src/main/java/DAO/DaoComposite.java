@@ -16,7 +16,7 @@ public class DaoComposite extends DAO_Figure<DaoComposite> {
 	}
 
 	@Override
-	public DaoComposite read(String name) {
+	public DaoComposite read(Object name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

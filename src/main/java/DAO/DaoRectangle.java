@@ -23,7 +23,7 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 			 * j'initialise ma requette preparé
 			 */
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			statements.add(psInsert);
+			//statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
 			 */
@@ -55,7 +55,7 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 	}
 
 	@Override
-	public Rectangle read(String name) {
+	public Rectangle read(Object name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

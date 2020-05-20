@@ -12,8 +12,6 @@ public class FormeCreateTest  {
 	@Test
 	public void create_test() throws SQLException
 	{	
-		CreateTableForme creation =new CreateTableForme();
-		System.out.println("objet creer avec succes ");
+		CreateTableForme.CreationTableForme();	
 	}
-
 }

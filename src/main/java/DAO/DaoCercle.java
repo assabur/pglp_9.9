@@ -3,10 +3,9 @@
  */
 package DAO;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 import Formes.Cercle;
 import fr.uvsq.solid.pglp_9.Flash;
@@ -34,8 +33,10 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 			/*
 			 * j'initialise ma requette preparé
 			 */
+			
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			statements.add(psInsert);
+			
+			//statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
 			 */
@@ -50,12 +51,12 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 			 */
 			psInsert.setString(1, obj.getname());
 			psInsert.setBinaryStream(2, objectIn, b.length);
-			Flash.affiche("avant insertion ");
+			//Flash.affiche("avant insertion ");
 			int test=psInsert.executeUpdate();
-			if(test==-1)
-			Flash.affiche("commande creer ");
 			
-			System.out.println(objectIn);
+			//Flash.affiche("forme creer ");
+			
+			//System.out.println(objectIn);
 			objectIn.close();
 			os.flush();
 			os.close();
@@ -65,15 +66,23 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 
 		} catch (Exception e) {
 			Flash.affiche("creation non valide ");
+			e.printStackTrace();
 		}
 		return false;
 
 	}
 
 	@Override
-	public Cercle read(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Cercle read(Object monObjet) 
+	 {
+		 Cercle cercle;
+		  try {
+				    cercle = (Cercle)monObjet;	
+				    return cercle;
+		} catch (Exception e) {
+			Flash.affiche("echec au niveau du cast ");
+		}		
+			  return null;	 
 	}
 
 	@Override

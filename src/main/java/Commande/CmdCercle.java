@@ -12,6 +12,6 @@ public class CmdCercle implements SpecificCommand{
 	}
 	public void execute(List <String> parametre)
 	{
-			receiver.getCercle(parametre);
+			receiver.createCercle(parametre);
 	}
 }

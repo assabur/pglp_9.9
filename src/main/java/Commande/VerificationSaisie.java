@@ -41,17 +41,21 @@ public class VerificationSaisie
 	/**
 	 * forme general pour deplacer une figure
 	 */
-	private static final String regexmove = "^([a-zA-Z]+)\\s*\\(\\s*([a-zA-Z0-9_-]+)\\s*,\\s*\\(\\s*\\d*?\\.?\\d+?\\s*,"
+	private static final String regexmove = "^(move)\\s*\\(\\s*([a-zA-Z0-9_-]+)\\s*,\\s*\\(\\s*\\d*?\\.?\\d+?\\s*,"
 			+ "\\s*\\d*?\\.?\\d+?\\s*\\)\\s*\\)";
 	private static final Pattern patternmove = Pattern.compile(regexmove);
 
-	private static final String regexaffiche = "^([a-zA-Z]+)\\s*\\(\\s*([a-zA-Z0-9_-])+\\s*\\)";
+	private static final String regexaffiche = "^(show)\\s*\\(\\s*([a-zA-Z0-9_-])+\\s*\\)";
 	private static final Pattern patternaffiche = Pattern.compile(regexaffiche);
 
-	private static final String regexgroup = "^([a-zA-Z0-9_-]+)\\s*=\\s*([a-zA-Z]+)\\s*\\(\\s*(([a-zA-Z0-9_-]*\\s*+),*)+\\)";
+	private static final String regexgroup = "^([a-zA-Z0-9_-]+)\\s*=\\s*(compose)\\s*\\(\\s*(([a-zA-Z0-9_-]*\\s*+),*)+\\)";
 	private static final Pattern patterngroup = Pattern.compile(regexgroup);
 	private String text="";
 	private static int TYPE;
+	
+	
+	
+	
 	/**
 	 * Verifie le format du text entrer par l'user
 	 * @param text format enter par l'user

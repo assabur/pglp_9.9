@@ -1,6 +1,8 @@
 package Formes;
 
-public class Point extends FormeGeometrique {
+import java.io.Serializable;
+
+public class Point extends FormeGeometrique implements Serializable {
 	
 	
 	/** L'abscisse du point. */

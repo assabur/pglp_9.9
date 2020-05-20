@@ -19,7 +19,9 @@ public enum DrawingApp
 				Flash.affiche("Dessin>");
 				UserChaine = new Scanner(System.in);	
 				chaine = UserChaine.nextLine();
-				saisie.nextCommand(chaine);
+				
+				if(saisie.nextCommand(chaine)!=null )
+					;
 				//UserChaine.close();
 			}while(true);
 		}
