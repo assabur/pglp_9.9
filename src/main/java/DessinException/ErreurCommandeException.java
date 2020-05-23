@@ -4,9 +4,9 @@ import fr.uvsq.solid.pglp_9.Flash;
 
 public class ErreurCommandeException extends Exception {
 	
-	public ErreurCommandeException()
+	public ErreurCommandeException(String message)
 	{
-		Flash.affiche("commande non valide");
+		Flash.affiche("Warning: "+message);
 	}
 
 }

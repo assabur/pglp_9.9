@@ -34,7 +34,7 @@ public abstract class DAO_Figure <T> {
 	
 	public abstract boolean create(T obj);
 	public abstract T read(Object monObjet);
-	public abstract boolean update(T obj);
+	public abstract boolean update(String obj);
 	public abstract boolean delete(String name);
 
 

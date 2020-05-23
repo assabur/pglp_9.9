@@ -7,6 +7,9 @@ public class Rectangle extends FormeGeometrique {
 	/** Coordonnes du coin inferieur droit */
 	private Point downRight;
 
+	private String nom="";
+	
+
 	/**
 	 * Initialise le rectangle.
 	 * 
@@ -15,11 +18,16 @@ public class Rectangle extends FormeGeometrique {
 	 * @param downRight
 	 *            Le coin inferieur droit.
 	 */
-	public Rectangle(Point upLeft, Point downRight) {
+	public Rectangle(String nom,Point upLeft, Point downRight) {
 		assert upLeft.getX() <= downRight.getX()
 				&& upLeft.getY() >= downRight.getY();
 		this.upLeft = upLeft;
 		this.downRight = downRight;
+		this.nom=nom;
+	}
+
+	public String getNom() {
+		return nom;
 	}
 
 	/**

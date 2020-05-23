@@ -1,10 +1,12 @@
 package DAO;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 import Formes.Carre;
@@ -19,7 +21,7 @@ import Formes.Triangle;
  */
 public class DaoFigureGeometrique  {
 
-	  public static Connection conn =ConnectionDerby.connection();
+	 
 	  /*
 	   * je definis l'ensemble des requetes preparés
 	   */
@@ -34,49 +36,26 @@ public class DaoFigureGeometrique  {
 	  * methode qui verifie l'instance d'un objet stocké dans la BD 
 	  */
 	  
-	  private static HashMap<String,Object> elmt=new HashMap<>();
+	  //private static HashMap<String,Object> elmt=new HashMap<>();
 	  
-	  public static HashMap<String,Object> read (String nom) {
+	  public static Object read (String nom) {
 		  try {
-		  		psSelect = conn
+		  		psSelect = ConnectionDerby.connection()
 			        .prepareStatement(SQL_DESERIALIZE_OBJECT);
 			    psSelect.setString(1, nom);
 			    ResultSet rs = psSelect.executeQuery();
 			    rs.next();
-
 			    byte[] b = rs.getBytes(2);
 			    ByteArrayInputStream is = new ByteArrayInputStream(b);
 			    ObjectInputStream ois = new ObjectInputStream(is);	
-			    Object monObjet=ois.readObject();
-			    if (monObjet instanceof Cercle)
-			    {
-			    	elmt.put("cercle", monObjet);
-			    	return elmt;			    	 			    	
-			    }
-			    if (monObjet instanceof Triangle)
-			    {
-			    	elmt.put("triangle", monObjet);
-			    	return elmt;			    	 			    	
-			    }
-			    if (monObjet instanceof Carre)
-			    {
-			    	elmt.put("carre", monObjet);
-			    	return elmt;			    	 			    	
-			    }
-			    if (monObjet instanceof Rectangle)
-			    {
-			    	elmt.put("rectangle", monObjet);
-			    	return elmt;			    	 			    	
-			    }
-			    if (monObjet instanceof CompositeFigure)
-			    {
-			    	elmt.put("composite", monObjet);
-			    	return elmt;			    	 			    	
-			    }
+			    Object monObjet=ois.readObject();		    
 			    rs.close();
 			    is.close();
 			    ois.close();
 			    psSelect.close();
+			    return monObjet;
+			    
+
 	} catch (Exception e) {
 		
 	}

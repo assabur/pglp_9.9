@@ -16,10 +16,19 @@ import fr.uvsq.solid.pglp_9.Flash;
  */
 public class Interpreter 
 {
+
+
+
 	/*
 	 * Liste des commandes possibles
 	 */
-	private final HashMap<String,Commande>listedescommande=new HashMap<String, Commande>();
+	private static  HashMap<String,Commande>listedescommande=new HashMap<String, Commande>();
+	public static HashMap<String, Commande> getListedescommande() {
+		return listedescommande;
+	}
+
+	
+	
 	/**
 	 * Recupere le nom et la commande et les arguments de la commande
 	 * ecrite par l'utilisateur 
@@ -50,20 +59,14 @@ public class Interpreter
 	public Commande executeCommand (String name,List<String> parametre) 
 	{	
 		Commande usercommand = listedescommande.get(name);
-	
-	        try {
 	        	if(usercommand!=null)
 	        	{
 	        		System.out.println("dans execute commande");
 		        	usercommand.execute(parametre);	
 		        	return usercommand;
 	        	}
+	        	//Flash.affiche("commande non valide "+name);
 	        	return  null;
-	        	
-			} catch (Exception e) {			
-				Flash.affiche("commande non valide");
-			}
-	        return null;
 	              
 	}
 	
@@ -73,40 +76,41 @@ public class Interpreter
 	public void addCommand(String name,Commande commande)
 	{		
 		this.listedescommande.put(name, commande);
+		//System.out.println(name);
 	}	
-	/*public void afficheCommande()
-	{	
-		System.out.println(listedescommande.get("carre"));
-		System.out.println(listedescommande.get("cercle"));
-	}*/
+
 	
 	
 		/**
 		 * Initialise les commandes
 		 */
-		public  static Interpreter init() 
+		public void init() 
 		{
-			//mes differentes commandes
+			/*
+			 * mes differentes commandes
+			 */
 			 Receiver_Formes receiver=new Receiver_Formes();
 			 CmdQuit quitprog=new CmdQuit(receiver);
 			 CmdCercle Cercle=new CmdCercle(receiver);
 			 CmdRectangle Rectangle=new CmdRectangle(receiver);
 			 CmdCarre Carre=new CmdCarre(receiver);		
 			 CmdTriangle Triangle=new CmdTriangle(receiver);
-			
+			 CmdCompose compose=new CmdCompose(receiver);
 			 CmdMove Move=new CmdMove(receiver);
 			 CmdShow affich=new CmdShow(receiver);
-			Interpreter interpreteur = new Interpreter();			
+			 CmdHelp help=new CmdHelp(receiver);
+				
 			
-			 interpreteur.addCommand("cercle", Cercle);
-			 interpreteur.addCommand("rectangle", Rectangle);
-			 interpreteur.addCommand("triangle", Triangle);
-			 interpreteur.addCommand("carre", Carre);
-			 interpreteur.addCommand("move", Move);
-			 interpreteur.addCommand("show", affich);
-			 interpreteur.addCommand("quit", quitprog);
-			 interpreteur.addCommand("compose", quitprog);
-			return interpreteur;
+			this.addCommand("show", affich);
+			this.addCommand("cercle", Cercle);
+			this.addCommand("rectangle", Rectangle);
+			this.addCommand("triangle", Triangle);
+			this.addCommand("carre", Carre);
+			this.addCommand("move", Move);			 
+			this.addCommand("quit", quitprog);
+			this.addCommand("compose", compose);
+			this.addCommand("help",help);
+			
 		}
 	
 }

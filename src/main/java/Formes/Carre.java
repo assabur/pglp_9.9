@@ -24,6 +24,10 @@ public class Carre extends FormeGeometrique{
 		this.nom=nom;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+
 	/**
 	 * Translate le carre.
 	 * 

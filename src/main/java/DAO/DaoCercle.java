@@ -86,7 +86,7 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 	}
 
 	@Override
-	public boolean update(Cercle obj) {
+	public boolean update(String obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}

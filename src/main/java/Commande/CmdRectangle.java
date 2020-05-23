@@ -12,7 +12,7 @@ public class CmdRectangle implements SpecificCommand{
 	}
 	public void execute(List<String> parametre)
 	{
-			receiver.getRectangle(parametre);
+			receiver.createRectangle(parametre);
 	}
 
 }

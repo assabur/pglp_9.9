@@ -10,10 +10,10 @@ import Formes.Rectangle;
 import fr.uvsq.solid.pglp_9.Flash;
 
 public class DaoRectangle extends DAO_Figure<Rectangle> {
-	private String variable="";
-	public DaoRectangle(Connection connect,String variable) {
+	
+	public DaoRectangle(Connection connect) {
 		super(connect);
-		this.variable=variable;
+		
 	}
 
 	@Override
@@ -36,11 +36,12 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 			/*
 			 * j'effectue les insertions du nom de la variable et l'objet
 			 */
-			psInsert.setString(1, variable);
+			String nom=obj.getNom();
+			psInsert.setString(1,nom);
 			psInsert.setBinaryStream(2, objectIn, b.length);
 
 			psInsert.executeUpdate();
-			System.out.println(objectIn);
+			//System.out.println(objectIn);
 			objectIn.close();
 			os.flush();
 			os.close();
@@ -61,7 +62,7 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 	}
 
 	@Override
-	public boolean update(Rectangle obj) {
+	public boolean update(String obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}

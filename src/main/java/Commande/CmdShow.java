@@ -3,8 +3,9 @@ package Commande;
 import java.util.List;
 
 import DessinException.NomDeFigureInValide;
+import fr.uvsq.solid.pglp_9.Flash;
 
-public class CmdShow implements GenericCommande
+public class CmdShow implements SpecificCommand
  {
 	private Receiver_Formes receiver=new Receiver_Formes();
 	public CmdShow(Receiver_Formes receiver)
@@ -13,7 +14,11 @@ public class CmdShow implements GenericCommande
 	}
 	public void execute(List<String> parametre) 
 	{	
-		System.out.println("dans execute show");
-			receiver.readForme(parametre);		
+		String nomVariable=parametre.get(1);
+		
+		String toString=receiver.readForme(nomVariable);
+		
+		Flash.affiche(toString);
+		
 	}
 }

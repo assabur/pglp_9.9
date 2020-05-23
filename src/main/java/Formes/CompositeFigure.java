@@ -6,11 +6,22 @@ import java.util.List;
 
 public class CompositeFigure extends FormeGeometrique
 {
+	/**
+	 * methode qui effectue un move sur l'ensemble des elements d'un composite
+	 */
 
 	public void move(int dx, int dy)
 	{
+		for(FormeGeometrique forme :formes)
+		{
+			forme.move(dx, dy);
+		}
 	}
 	private String name;
+	public String getName()
+	{
+		return this.name;
+	}
 	public CompositeFigure(String name)
 	{
 		this.name=name;

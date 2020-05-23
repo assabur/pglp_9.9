@@ -11,6 +11,6 @@ public class CmdCarre implements SpecificCommand
 	}
 	public void execute(List<String> parametre)
 	{
-			receiver.getCarre(parametre);
+			receiver.createCarre(parametre);
 	}
 }

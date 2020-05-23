@@ -9,9 +9,11 @@ public class CmdQuit implements GenericCommande
 	{
 		this.receiver=receiver;
 	}
-
+	/**
+	 * arrete et quitte le logiciel de dessin
+	 */
 	public void execute(List<String> parametre) 
 	{
-		//receiver.get		
+		receiver.getQuit();		
 	}
 }

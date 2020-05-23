@@ -11,6 +11,6 @@ public class CmdTriangle implements SpecificCommand
 	}
 	public void execute(List<String> parametre)
 	{
-			receiver.getTriangle(parametre); 
+			receiver.createTriangle(parametre); 
 	}
 }

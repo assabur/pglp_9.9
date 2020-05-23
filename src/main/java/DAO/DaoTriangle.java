@@ -10,11 +10,11 @@ import fr.uvsq.solid.pglp_9.Flash;
 
 public class DaoTriangle extends DAO_Figure<Triangle> {
 
-	private String variable="";
-	public DaoTriangle(Connection conn,String variable) {
+	
+	public DaoTriangle(Connection conn) {
 		// TODO Auto-generated constructor stub
 		super(conn);
-		this.variable=variable;
+	
 		
 	}
 
@@ -38,11 +38,11 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 			/*
 			 * j'effectue les insertions du nom de la variable et l'objet
 			 */
-			psInsert.setString(1, variable);
+			psInsert.setString(1, obj.getName());
 			psInsert.setBinaryStream(2, objectIn, b.length);
 
 			psInsert.executeUpdate();
-			System.out.println(objectIn);
+			//System.out.println(objectIn);
 			objectIn.close();
 			os.flush();
 			os.close();
@@ -63,7 +63,7 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 	}
 
 	@Override
-	public boolean update(Triangle obj) {
+	public boolean update(String obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
