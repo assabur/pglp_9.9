@@ -35,11 +35,9 @@ public class DrawingTUI {
 			this.parametre = interpreter.DecoupeChaine(chaineUser);
 			if (chaineUser.toLowerCase().contains("show") || chaineUser.toLowerCase().contains("quit")
 					|| chaineUser.toLowerCase().contentEquals("help")) {
-				System.out.println("test1 "+commandename);
 				commandename = this.parametre.get(0);
 			} else {
 				commandename = this.parametre.get(1);
-				System.out.println("test1 "+commandename);
 			}
 
 			return interpreter.getListedescommande().get(commandename.toLowerCase());

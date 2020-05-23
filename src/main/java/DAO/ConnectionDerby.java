@@ -15,24 +15,29 @@ public class ConnectionDerby {
 	 * definition des constantes de connexion
 	 */
 	private static String JDBC_URL="jdbc:derby:FormeDB;create=true";
+	
+	//private static String JDBC_URL="jdbc:derby://localhost:1527/FormeDB";
 	private static final String DRIVER="org.apache.derby.jdbc.EmbeddedDriver";
 	private static Statement statement;
 	
 	/*
 	 * methode permettant de se connecter directemeent à la base de données
 	 */
-	public static Connection connection()
+	
+	//DriverManager.getConnection("jdbc:derby:FormeDB;shutdown=true");
+	public static Connection connection() 
 	{
 		try {
 
 			Connection connec =DriverManager.getConnection(JDBC_URL);
 			if (connec!=null)
-				Flash.affiche("connection reuissi");
+				//Flash.affiche("connection reuissi");
 			return connec;
 		} catch (SQLException e )
 		{
-			e.printStackTrace();
-			Flash.affiche("echec de connexion");
+			
+			//e.printStackTrace();
+			Flash.affiche("echec de connexion à la BD reesayer");
 		}
 	
 		return null;

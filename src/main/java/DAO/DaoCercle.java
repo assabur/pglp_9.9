@@ -6,6 +6,7 @@ package DAO;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import Formes.Cercle;
 import fr.uvsq.solid.pglp_9.Flash;
@@ -28,6 +29,7 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 	 */
 	@Override
 	public boolean create(Cercle obj) {
+		Flash.affiche(obj.toString());
 
 		try {
 			/*
@@ -64,9 +66,11 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 			out.close();
 			return true;
 
-		} catch (Exception e) {
-			Flash.affiche("creation non valide ");
-			e.printStackTrace();
+		} catch (SQLException e) {
+			Flash.affiche("erreur sql ");
+		}
+		catch (IOException e) {
+			Flash.affiche("erreur IO");
 		}
 		return false;
 

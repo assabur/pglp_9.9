@@ -2,8 +2,10 @@ package DAO;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import Formes.CompositeFigure;
 import fr.uvsq.solid.pglp_9.Flash;
@@ -17,6 +19,7 @@ public class DaoComposite extends DAO_Figure<CompositeFigure> {
 
 	@Override
 	public boolean create(CompositeFigure obj) {
+		Flash.affiche(obj.toString());
 		try {
 			/*
 			 * j'initialise ma requette preparé
@@ -52,9 +55,11 @@ public class DaoComposite extends DAO_Figure<CompositeFigure> {
 			out.close();
 			return true;
 
-		} catch (Exception e) {
-			Flash.affiche("creation non valide ");
-			e.printStackTrace();
+		} catch (SQLException e) {
+			Flash.affiche("erreur sql ");
+		}
+		catch (IOException e) {
+			Flash.affiche("erreur IO");
 		}
 		return false;
 	}

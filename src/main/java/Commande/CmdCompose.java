@@ -3,6 +3,9 @@ package Commande;
 import java.util.ArrayList;
 import java.util.List;
 
+import DessinException.NullPointerObj;
+import fr.uvsq.solid.pglp_9.Flash;
+
 public class CmdCompose implements GenericCommande
 {
 	/***
@@ -19,6 +22,10 @@ public class CmdCompose implements GenericCommande
 	@Override
 	public void execute(List<String> parametre) {
 				
-		receiver.makeCompose(parametre);
+		try {
+			receiver.makeCompose(parametre);
+		} catch (NullPointerObj e) {
+			Flash.affiche("commande mal initialisée" );
+		}
 	}
 }

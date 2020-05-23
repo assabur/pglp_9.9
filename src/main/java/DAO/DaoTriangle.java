@@ -2,30 +2,30 @@ package DAO;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import Formes.Triangle;
 import fr.uvsq.solid.pglp_9.Flash;
 
 public class DaoTriangle extends DAO_Figure<Triangle> {
 
-	
 	public DaoTriangle(Connection conn) {
-		// TODO Auto-generated constructor stub
 		super(conn);
-	
-		
+
 	}
 
 	@Override
 	public boolean create(Triangle obj) {
+		Flash.affiche(obj.toString());
 		try {
 			/*
 			 * j'initialise ma requette preparé
 			 */
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			//statements.add(psInsert);
+			// statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
 			 */
@@ -42,7 +42,7 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 			psInsert.setBinaryStream(2, objectIn, b.length);
 
 			psInsert.executeUpdate();
-			//System.out.println(objectIn);
+			// System.out.println(objectIn);
 			objectIn.close();
 			os.flush();
 			os.close();
@@ -50,14 +50,16 @@ public class DaoTriangle extends DAO_Figure<Triangle> {
 			out.close();
 			return true;
 
-		} catch (Exception e) {
-			Flash.affiche("creation non valide ");
+		} catch (SQLException e) {
+			Flash.affiche("erreur sql ");
+		} catch (IOException e) {
+			Flash.affiche("erreur IO");
 		}
 		return false;
 	}
 
 	@Override
-	public Triangle read( Object monObjet) {
+	public Triangle read(Object monObjet) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -50,7 +50,7 @@ public class VerificationSaisie {
 	
 	// private static final String regexgroup =
 	// "^([a-zA-Z0-9_-]+)\\s*=\\s*(compose)\\s*\\(\\s*(([a-zA-Z0-9_-]*\\s*+),*)+\\)";
-	private static final String regexgroup = "^(compose)\\s*=\\s*(compose)\\s*\\(\\s*(([a-zA-Z0-9_-]*\\s*+),*)+\\)";
+	private static final String regexgroup = "^([a-zA-Z0-9_-]+)\\s*=\\s*(compose)\\s*\\(\\s*(([a-zA-Z0-9_-]*\\s*+),*)+\\)";
 	private static final Pattern patterngroup = Pattern.compile(regexgroup);
 	private String text = "";
 	private static int TYPE;
@@ -79,6 +79,11 @@ public class VerificationSaisie {
 					matcher = patterntriangle.matcher(text);
 					if (matcher.matches())
 						return true;
+					else {
+						matcher = patterngroup.matcher(text);
+						if (matcher.matches())
+							return true;
+					}
 				}
 			}
 		} else {

@@ -31,10 +31,11 @@ public class Triangle extends FormeGeometrique{
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append(name);
-		str.append("(triangle=");
+		str.append(" (triangle=>");
+		str.append(sommet.toString()+", ");
 		str.append(downLeft.toString());
 		str.append(", ");
-		str.append(downRight.toString());
+		str.append(downRight.toString());		
 		str.append(")");
 		return str.toString();
 	}
@@ -71,11 +72,6 @@ public class Triangle extends FormeGeometrique{
 		return sommet;
 	}
 
-
-	public void execute() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void move(int dx, int dy) {
 		this.sommet.move(dx, dy);

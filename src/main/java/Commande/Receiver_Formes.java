@@ -11,6 +11,7 @@ import java.util.List;
 import DAO.DaoFActory;
 import DAO.DaoFigureGeometrique;
 import DessinException.NomDeFigureInValide;
+import DessinException.NullPointerObj;
 import Formes.Carre;
 import Formes.Cercle;
 import Formes.CompositeFigure;
@@ -123,8 +124,7 @@ public class Receiver_Formes
 		
 		int dxUpLeft=Integer.parseInt(parametre.get(2));
 		int dyUpLeft=Integer.parseInt(parametre.get(3));
-		int dxUpRight=Integer.parseInt(parametre.get(4));
-		int dyUpRight=Integer.parseInt(parametre.get(5));
+		int cote=Integer.parseInt(parametre.get(4));
 		String variable=parametre.get(0);
 		
 		
@@ -132,11 +132,11 @@ public class Receiver_Formes
 		 * je cree un objet cercle a l'aide des elements de ma liste
 		 */
 		Point UpLeft=new Point(dxUpLeft,dyUpLeft) ;
-		Point UpRight=new Point(dxUpRight,dyUpRight) ;
+		
 		/**
 		 * je cree un objet rectangle que je vais ensuite mettre dans la BD
 		 */
-		Carre carre=new Carre(variable,UpLeft,UpRight);
+		Carre carre=new Carre(variable,UpLeft,cote);
 		DaoFActory.getCarreDAO().create(carre);
 	}
 	/**
@@ -160,24 +160,28 @@ public class Receiver_Formes
 	 * pour faire le compose de plusieurs figure
 	 */
 	
-	public void makeCompose(List<String> parametre)
+	public void makeCompose(List<String> parametre) throws NullPointerObj
 	{
 		String nomComposite=parametre.get(0);
 		CompositeFigure composite=new CompositeFigure(nomComposite);
-		ArrayList <String>  variableSaisie=new ArrayList<>();
 		FormeGeometrique forme;
-		int i=2;
-		while(parametre.get(i)!=null)
+		int i=0;
+		
+		for(String saisie : parametre)
 		{
-			variableSaisie.add(parametre.get(i));
+			if(i>=2)
+			{
+				System.out.println("ajout de "+saisie);
+				forme=	((FormeGeometrique)DaoFigureGeometrique.read(saisie));
+				composite.add(forme);
+			}
+			i++;
 		}
-		for(String saisie : variableSaisie)
-		{
-			 forme=	((FormeGeometrique)DaoFigureGeometrique.read(saisie));
-			composite.add(forme);
-			
-		}
+		//Flash.affiche(composite.toString());
+		if(composite!=null)
 		DaoFActory.getCompositePerso().create(composite);
+		throw new NullPointerObj();
+		
 	}
 	
 	/**
@@ -193,7 +197,7 @@ public class Receiver_Formes
                 + "c2 = Carre((xUpleft, yUpleft),(xUpright, yUpright))\n"
                 + "r1 = Rectangle((xUpleft, yUpleft),(xUpright, yUpright))\n"
                 + "t1 = Triangle((x, y), (x, y), (x, y))\n"
-                + "g1 = Groupe(c1, c2, r1, t1)\n"
+                + "g1 = Compose(c1, c2, r1, t1)\n"
                 + "Déplacement : move(c1(x, y))\n"
                 + "Affichage : show(r1)\n"
                 + "Quitter : quit\n\n"+

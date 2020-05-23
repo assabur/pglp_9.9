@@ -50,5 +50,19 @@ public class CompositeFigure extends FormeGeometrique
 	{
 		formes.remove(mafigure);
 	}
-	
+	/**
+	 * redefinisions la methode tostring
+	 */
+	public String toString()
+	{
+		StringBuilder str = new StringBuilder();
+		str.append(name);
+		str.append(" (Groupe=>");
+		for(FormeGeometrique formesComposite: formes)
+		{			
+			str.append(formesComposite.toString());
+		}	
+		str.append(" )");
+		return str.toString();		
+	}
 }

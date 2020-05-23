@@ -2,22 +2,25 @@ package DAO;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import Formes.Cercle;
 import Formes.Rectangle;
 import fr.uvsq.solid.pglp_9.Flash;
 
 public class DaoRectangle extends DAO_Figure<Rectangle> {
-	
+
 	public DaoRectangle(Connection connect) {
 		super(connect);
-		
+
 	}
 
 	@Override
 	public boolean create(Rectangle obj) {
+		Flash.affiche(obj.toString());
 		try {
 			/*
 			 * j'initialise ma requette preparé
@@ -49,8 +52,11 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 			out.close();
 			return true;
 
-		} catch (Exception e) {
-			Flash.affiche("creation non valide ");
+		} catch (SQLException e) {
+			Flash.affiche("erreur sql ");
+		}
+		catch (IOException e) {
+			Flash.affiche("erreur IO");
 		}
 		return false;
 	}
@@ -73,6 +79,6 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 		return false;
 	}
 
-	
+
 
 }

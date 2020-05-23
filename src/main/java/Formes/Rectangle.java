@@ -19,8 +19,7 @@ public class Rectangle extends FormeGeometrique {
 	 *            Le coin inferieur droit.
 	 */
 	public Rectangle(String nom,Point upLeft, Point downRight) {
-		assert upLeft.getX() <= downRight.getX()
-				&& upLeft.getY() >= downRight.getY();
+		
 		this.upLeft = upLeft;
 		this.downRight = downRight;
 		this.nom=nom;
@@ -59,8 +58,4 @@ public class Rectangle extends FormeGeometrique {
 		str.append(")");
 		return str.toString();
 }
-
-	public void execute() {
-		// TODO Auto-generated method stub
-		
-	}}
+}

@@ -16,8 +16,8 @@ import fr.uvsq.solid.pglp_9.Flash;
 public class CarreTest {
 
 	private static Point upLeft= new Point(1,2);
-	private static Point upRight= new Point(1,2);
-	private Carre carre=new Carre("carre1",upLeft,upRight);
+	private static int cote= 5;
+	private Carre carre=new Carre("carre1",upLeft,cote);
 	@Test
 	public void testCarre() throws SQLException
 	{

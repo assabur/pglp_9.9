@@ -5,7 +5,7 @@ public class Carre extends FormeGeometrique{
 	private Point upLeft;
 
 	/** Coordonnes du coin inferieur droit */
-	private Point upRight;
+	private int cote;
 	
 	private String nom; 
 
@@ -17,10 +17,10 @@ public class Carre extends FormeGeometrique{
 	 * @param downRight
 	 *            Le coin inferieur droit.
 	 */
-	public Carre(String nom,Point upLeft, Point upRight) {
+	public Carre(String nom,Point upLeft, int cote) {
 		
 		this.upLeft = upLeft;
-		this.upRight = upRight;
+		this.cote = cote;
 		this.nom=nom;
 	}
 
@@ -39,7 +39,7 @@ public class Carre extends FormeGeometrique{
 
 	public void move(int dx, int dy) {
 		upLeft.move(dx, dy);
-		upRight.move(dx, dy);
+		
 	}
 
 	/**
@@ -54,13 +54,8 @@ public class Carre extends FormeGeometrique{
 		str.append("(carre=");
 		str.append(upLeft.toString());
 		str.append(", ");
-		str.append(upRight.toString());
+		str.append(cote);
 		str.append(")");
 		return str.toString();
-
 }
-
-	public void execute() {
-		// TODO Auto-generated method stub
-		
-	}}
+}
