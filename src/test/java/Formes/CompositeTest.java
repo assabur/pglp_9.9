@@ -28,6 +28,7 @@ public class CompositeTest {
 		composite.add(triangle);
 		composite.add(rectangle);
 		composite.add(cercle);
+		
 		affiche=new AfficheComposite(composite);
 	}
 	@Test
@@ -39,7 +40,8 @@ public class CompositeTest {
 
 		while(affiche.getIterator().hasNext())
 		{
-			Flash.affiche(affiche.getIterator().Next().toString());
+			FormeGeometrique nextValue=affiche.getIterator().Next();
+			Flash.affiche(nextValue.toString());
 		}
 		}
 		catch(ClassCastException e)
