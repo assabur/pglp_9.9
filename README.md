@@ -1,10 +1,10 @@
 # pglp_9.9
 # Logiciel de dessin en ligne de commande
 
-*Objectif du projet
+`Objectif du projet`
 
 Réaliser un logiciel de dessin qui permet de faire une description textuelle, de creer de deplacer des figures 	géométriques telles que: des carre, des rectangles, des cercles des triangles, mais aussi d'un groupe de figure.
-```Description des figures:```
+`Description des figures:`
 Un carre est une figure géométrique ayant un point et un coté. Exemple: Carre(upLeft(1,0),cote=10)
 Un cercle est une figure géométrique ayant un centre et un rayon. Exemple: Cercle(centre=(0,0),rayon=10)
 Un rectangle est une figure géométrique ayant un point haut gauche(upLeft) et un point bas 	droit(downRight). 
@@ -13,15 +13,15 @@ Un triangle est une figure géométrique ayant trois points et un rayon. Exemple
 
 # Manuel utilisateur 
 `Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on      peut voir certaines commandes specifiques et d'autres generiques. `
-	Creation:  
+Creation:  
 				 cerc= Cercle((centrX, centreY), rayon)
 				 carr = Carre((xUpleft, yUpleft),cote)
 				 rect = Rectangle((xUpleft, yUpleft),(xUpright, yUpright))
 				 trig = Triangle((x, y), (x, y), (x, y))
 				 composé = Compose(c1, c2, r1, t1)
-	Déplacement: 		 move(c1,(x, y))
-	Affichage:   		 show(r1)
-	Quitter:     	         quit`
+Déplacement: 		 move(c1,(x, y))
+Affichage:   		 show(r1)
+Quitter:     	         quit`
 	
 # Manuel Technique
 *`Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant 	une forme géometrique.`
