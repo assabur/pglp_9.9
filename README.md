@@ -11,7 +11,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Un rectangle est une figure géométrique ayant un point haut gauche(upLeft) et un point bas 	droit(downRight). 
 	Exemple: Rectangle(upLeft(1,5),upRight(3,2))
 	Un triangle est une figure géométrique ayant trois points et un rayon. Exemple:Triangle(point1(1,1),point2(3,4),point3(0,4))```
-->
+
 # Manuel utilisateur 
 ```Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on peut voir certaines commandes specifiques et d'autres generiques. 
 	Creation:  
@@ -23,7 +23,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Déplacement: 		 move(c1,(x, y))
 	Affichage:   		 show(r1)
 	Quitter:     	         quit```
-->	
+	
 # Manuel Technique
 ```Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant une forme géometrique.
 	Pour cloner le projet faire: git clone https://github.com/assabur/pglp_9.9
