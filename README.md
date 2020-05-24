@@ -5,7 +5,7 @@ Objectif du projet
 
 Réaliser un logiciel de dessin qui permet de faire une description textuelle, de creer de deplacer des figures 	géométriques telles que: des carre, des rectangles, des cercles des triangles, mais aussi d'un groupe de figure.
 	
-	```Description des figures:
+        ```Description des figures:
 	Un carre est une figure géométrique ayant un point et un coté. Exemple: Carre(upLeft(1,0),cote=10)
 	Un cercle est une figure géométrique ayant un centre et un rayon. Exemple: Cercle(centre=(0,0),rayon=10)
 	Un rectangle est une figure géométrique ayant un point haut gauche(upLeft) et un point bas 	droit(downRight). 
@@ -13,7 +13,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Un triangle est une figure géométrique ayant trois points et un rayon. Exemple:Triangle(point1(1,1),point2(3,4),point3(0,4))```
 
 # Manuel utilisateur 
-```Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on peut voir certaines commandes specifiques et d'autres generiques. ```
+```Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on      peut voir certaines commandes specifiques et d'autres generiques. ```
 	Creation:  
 				 cerc= Cercle((centrX, centreY), rayon)
 				 carr = Carre((xUpleft, yUpleft),cote)
@@ -35,6 +35,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	
 # captures d'execution
 ![compose](https://github.com/assabur/pglp_9.9/blob/master/captures/compose.jpg)
+->
 ![show](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
 	
 	
