@@ -25,8 +25,8 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Quitter:     	         quit`
 	
 # Manuel Technique
-`Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant 	une forme géometrique.`
-	* Pour cloner le projet faire: git clone https://github.com/assabur/pglp_9.9
+*`Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant 	une forme géometrique.`
+	*`Pour cloner le projet faire: git clone https://github.com/assabur/pglp_9.9`
 ` ensuite `
 	mvn clean 
 	mvn package
