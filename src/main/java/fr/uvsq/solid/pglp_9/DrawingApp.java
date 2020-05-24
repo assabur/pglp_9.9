@@ -50,6 +50,7 @@ public class DrawingApp
 
 	public static void main( String[] args ) throws ErreurCommandeException  {
 		DrawingApp dessin = new DrawingApp();
+		dessin.initBD();
 		dessin.run(args);
 
 	}
