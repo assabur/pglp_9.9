@@ -32,8 +32,8 @@ ensuite
 	mvn package
 	java -jar target/pglp_9.9-1.0-SNAPSHOT.jar
 	ou encore ouvrir le projet avec un IDE et executer DrawingApp.java ```
-![alt commande compose](https://github.com/assabur/pglp_9.9/blob/master/captures/compose.jpg)
-![capture 1: show du groupe](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
+![compose](https://github.com/assabur/pglp_9.9/blob/master/captures/compose.jpg)
+![show](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
 	
 	
 	
