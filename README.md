@@ -30,7 +30,8 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 ensuite 
 	mvn clean 
 	mvn package
-	java -jar target/pglp_9.9-1.0-SNAPSHOT.jar```
+	java -jar target/pglp_9.9-1.0-SNAPSHOT.jar
+	ou encore ouvrir le projet avec un IDE et executer DrawingApp.java ```
 	
 	
 	
