@@ -13,7 +13,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Un triangle est une figure géométrique ayant trois points et un rayon. Exemple:Triangle(point1(1,1),point2(3,4),point3(0,4))```
 
 # Manuel utilisateur 
-```Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on peut voir certaines commandes specifiques et d'autres generiques. 
+```Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on peut voir certaines commandes specifiques et d'autres generiques. ```
 	Creation:  
 				 cerc= Cercle((centrX, centreY), rayon)
 				 carr = Carre((xUpleft, yUpleft),cote)
@@ -25,13 +25,15 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	Quitter:     	         quit```
 	
 # Manuel Technique
-```Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant une forme géometrique.
-	Pour cloner le projet faire: git clone https://github.com/assabur/pglp_9.9
-ensuite 
+```Pour persister les données nous utilisons Derby(SGBD embarquer).En effet on stocke chaque figure sous formes d'objet.Un objet etant 	une forme géometrique.```
+	```Pour cloner le projet faire: git clone https://github.com/assabur/pglp_9.9```
+``` ensuite ```
 	mvn clean 
 	mvn package
 	java -jar target/pglp_9.9-1.0-SNAPSHOT.jar
 	ou encore ouvrir le projet avec un IDE et executer DrawingApp.java ```
+	
+# captures d'execution
 ![compose](https://github.com/assabur/pglp_9.9/blob/master/captures/compose.jpg)
 ![show](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
 	
