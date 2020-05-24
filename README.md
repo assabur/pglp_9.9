@@ -38,7 +38,7 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 ->
 ![show](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
 ->
-![move]	(https://github.com/assabur/pglp_9.9/blob/master/captures/plusieursTest.png)
+![move](https://github.com/assabur/pglp_9.9/blob/master/captures/plusieursTest.png)
 	
 	
 	
