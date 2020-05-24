@@ -34,13 +34,13 @@ Réaliser un logiciel de dessin qui permet de faire une description textuelle, d
 	ou encore ouvrir le projet avec un IDE et executer DrawingApp.java ```
 	
 # captures d'execution
-* pour afficher l'aide tapez Help
+* `pour afficher l'aide tapez Help`
 ![help](https://github.com/assabur/pglp_9.9/blob/master/captures/help.jpg)
-* effectuons une composition de deux cercles (cercle et c1)
+* `effectuons une composition de deux cercles (cercle et c1)`
 ![compose](https://github.com/assabur/pglp_9.9/blob/master/captures/compose.jpg)
-* utilisons la commande show pour afficher une figure
+* `utilisons la commande show pour afficher une figure`
 ![show](https://github.com/assabur/pglp_9.9/blob/master/captures/show.jpg)
-* utilisons la commande show et ensuit move pour deplacer une figure
+* `utilisons la commande show et ensuit move pour deplacer une figure`
 ![move](https://github.com/assabur/pglp_9.9/blob/master/captures/plusieursTest.png)
 	
 	
