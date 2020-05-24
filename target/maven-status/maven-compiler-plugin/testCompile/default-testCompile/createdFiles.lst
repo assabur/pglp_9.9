@@ -1,0 +1,14 @@
+Dao\CarreTest.class
+Formes\RectangleTest.class
+Dao\TriangleTest.class
+Dao\RectangleTest.class
+Dao\BdConnexionTest.class
+Formes\CompositeTest.class
+Dao\FormeCreateTest.class
+Dao\CercleTest.class
+Formes\TriangleTest.class
+Commande\InterpreterTest.class
+Dao\CompositeTest.class
+Formes\CercleTest.class
+Dao\TestFormeGeometrique.class
+Formes\CarreTest.class

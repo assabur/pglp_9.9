@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2020</copyright>
     <item>
-      <title>File: 46,
-             Errors: 1273,
+      <title>File: 43,
+             Errors: 1227,
              Warnings: 0,
              Infos: 0
       </title>
@@ -158,20 +158,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#DessinException.SqlException.java">DessinException/SqlException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#Commande.CmdShow.java">Commande/CmdShow.java</a>
                 </td>
                 <td>
@@ -181,7 +167,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  27
+                  28
                 </td>
               </tr>
                           <tr>
@@ -214,20 +200,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#DessinException.NullPointerObj.java">DessinException/NullPointerObj.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  6
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#Commande.CmdRectangle.java">Commande/CmdRectangle.java</a>
                 </td>
                 <td>
@@ -251,7 +223,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  45
+                  31
                 </td>
               </tr>
                           <tr>
@@ -284,20 +256,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#DessinException.KeyAlreadyExistException.java">DessinException/KeyAlreadyExistException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#fr.uvsq.solid.pglp_9.Flash.java">fr/uvsq/solid/pglp_9/Flash.java</a>
                 </td>
                 <td>
@@ -321,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  21
+                  20
                 </td>
               </tr>
                           <tr>
@@ -335,7 +293,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  17
+                  10
                 </td>
               </tr>
                           <tr>
@@ -349,7 +307,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  28
+                  29
                 </td>
               </tr>
                           <tr>
@@ -377,7 +335,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  39
+                  55
                 </td>
               </tr>
                           <tr>
@@ -391,7 +349,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  10
+                  9
                 </td>
               </tr>
                           <tr>
@@ -438,6 +396,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://maven.apache.org/checkstyle.html#DessinException.BdException.java">DessinException/BdException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://maven.apache.org/checkstyle.html#Commande.CmdMove.java">Commande/CmdMove.java</a>
                 </td>
                 <td>
@@ -447,7 +419,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  35
+                  40
                 </td>
               </tr>
                           <tr>
@@ -461,7 +433,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  22
+                  18
                 </td>
               </tr>
                           <tr>
@@ -476,20 +448,6 @@ under the License.
                 </td>
                 <td>
                   31
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#InitDerby.java">InitDerby.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  20
                 </td>
               </tr>
                           <tr>
@@ -517,7 +475,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  203
+                  195
                 </td>
               </tr>
                           <tr>
@@ -531,7 +489,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  57
+                  58
                 </td>
               </tr>
                           <tr>
@@ -601,7 +559,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  32
+                  28
                 </td>
               </tr>
                           <tr>
@@ -643,7 +601,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  28
+                  25
                 </td>
               </tr>
                           <tr>

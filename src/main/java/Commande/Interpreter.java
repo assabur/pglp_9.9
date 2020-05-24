@@ -34,7 +34,7 @@ public class Interpreter
 	 * ecrite par l'utilisateur 
 	 * @param Str
 	 */
-	public List<String> DecoupeChaine(String Str) 
+	public List<String> decoupeChaine(String Str) 
 	{
 		List<String> list = new ArrayList<String>(5);//je decompose la saisie de l'user
 		Str = Str.replaceAll("\\s","");
@@ -61,7 +61,7 @@ public class Interpreter
 		Commande usercommand = listedescommande.get(name);
 	        	if(usercommand!=null)
 	        	{
-	        		System.out.println("dans execute commande");
+	        		//System.out.println("dans execute commande");
 		        	usercommand.execute(parametre);	
 		        	return usercommand;
 	        	}

@@ -65,8 +65,8 @@ pglp_9.9
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>47</td>
-<td>30</td>
+<td>44</td>
+<td>26</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -76,44 +76,32 @@ pglp_9.9
 <th>Class</th>
 <th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#Commande.CmdHelp">Commande.CmdHelp</a></td>
-<td>1</td></tr>
-<tr class="a">
 <td><a href="#Commande.Interpreter">Commande.Interpreter</a></td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#Commande.Receiver_Formes">Commande.Receiver_Formes</a></td>
 <td>1</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#Commande.VerificationSaisie">Commande.VerificationSaisie</a></td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#DAO.ConnectionDerby">DAO.ConnectionDerby</a></td>
 <td>3</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#DAO.CreateTableForme">DAO.CreateTableForme</a></td>
 <td>2</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#DAO.DAO_Figure">DAO.DAO_Figure</a></td>
 <td>6</td></tr>
-<tr class="a">
-<td><a href="#DAO.DaoCarre">DAO.DaoCarre</a></td>
-<td>1</td></tr>
 <tr class="b">
 <td><a href="#DAO.DaoCercle">DAO.DaoCercle</a></td>
 <td>1</td></tr>
 <tr class="a">
 <td><a href="#DAO.DaoComposite">DAO.DaoComposite</a></td>
-<td>2</td></tr>
+<td>1</td></tr>
 <tr class="b">
 <td><a href="#DAO.DaoFigureGeometrique">DAO.DaoFigureGeometrique</a></td>
-<td>4</td></tr>
-<tr class="a">
-<td><a href="#DAO.DaoRectangle">DAO.DaoRectangle</a></td>
-<td>1</td></tr>
-<tr class="b">
-<td><a href="#DAO.DaoTriangle">DAO.DaoTriangle</a></td>
-<td>1</td></tr>
+<td>5</td></tr>
 <tr class="a">
 <td><a href="#DessinException.iOdessinException">DessinException.iOdessinException</a></td>
 <td>1</td></tr>
@@ -122,22 +110,7 @@ pglp_9.9
 <td>1</td></tr>
 <tr class="a">
 <td><a href="#fr.uvsq.solid.pglp_9.DrawingTUI">fr.uvsq.solid.pglp_9.DrawingTUI</a></td>
-<td>3</td></tr></table></div><a name="Commande.CmdHelp"></a>
-<div class="section">
-<h3><a name="Commande.CmdHelp"></a>Commande.CmdHelp</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>Champ inutilis&#xe9; : Commande.CmdHelp.receiver</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#URF_UNREAD_FIELD">URF_UNREAD_FIELD</a></td>
-<td>9</td>
-<td>Medium</td></tr></table></div><a name="Commande.Interpreter"></a>
+<td>3</td></tr></table></div><a name="Commande.Interpreter"></a>
 <div class="section">
 <h3><a name="Commande.Interpreter"></a>Commande.Interpreter</h3>
 <table border="0" class="bodyTable">
@@ -166,7 +139,7 @@ pglp_9.9
 <td>Commande.Receiver_Formes.getQuit() invoque System.exit(...), qui stoppe toute la JVM</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DM_EXIT">DM_EXIT</a></td>
-<td>157</td>
+<td>167</td>
 <td>Medium</td></tr></table></div><a name="Commande.VerificationSaisie"></a>
 <div class="section">
 <h3><a name="Commande.VerificationSaisie"></a>Commande.VerificationSaisie</h3>
@@ -223,13 +196,13 @@ pglp_9.9
 <td>Le nom de la m&#xe9;thode DAO.CreateTableForme.CreationTableForme() ne commence pas par une minuscule</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NM_METHOD_NAMING_CONVENTION">NM_METHOD_NAMING_CONVENTION</a></td>
-<td>15</td>
+<td>14</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>DAO.CreateTableForme.CreationTableForme() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td>17</td>
+<td>15</td>
 <td>Medium</td></tr></table></div><a name="DAO.DAO_Figure"></a>
 <div class="section">
 <h3><a name="DAO.DAO_Figure"></a>DAO.DAO_Figure</h3>
@@ -275,22 +248,7 @@ pglp_9.9
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD</a></td>
 <td></td>
-<td>Medium</td></tr></table></div><a name="DAO.DaoCarre"></a>
-<div class="section">
-<h3><a name="DAO.DaoCarre"></a>DAO.DaoCarre</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>L'objet non s&#xe9;rialisable DaoCarre.java:[line 36] est &#xe9;crit dans ObjectOutput dans DAO.DaoCarre.create(Carre)</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DMI_NONSERIALIZABLE_OBJECT_WRITTEN">DMI_NONSERIALIZABLE_OBJECT_WRITTEN</a></td>
-<td>36</td>
-<td>High</td></tr></table></div><a name="DAO.DaoCercle"></a>
+<td>Medium</td></tr></table></div><a name="DAO.DaoCercle"></a>
 <div class="section">
 <h3><a name="DAO.DaoCercle"></a>DAO.DaoCercle</h3>
 <table border="0" class="bodyTable">
@@ -320,76 +278,46 @@ pglp_9.9
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
 <td>46</td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>L'objet non s&#xe9;rialisable DaoComposite.java:[line 36] est &#xe9;crit dans ObjectOutput dans DAO.DaoComposite.create(CompositeFigure)</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DMI_NONSERIALIZABLE_OBJECT_WRITTEN">DMI_NONSERIALIZABLE_OBJECT_WRITTEN</a></td>
-<td>36</td>
-<td>High</td></tr></table></div><a name="DAO.DaoFigureGeometrique"></a>
+<td>Medium</td></tr></table></div><a name="DAO.DaoFigureGeometrique"></a>
 <div class="section">
 <h3><a name="DAO.DaoFigureGeometrique"></a>DAO.DaoFigureGeometrique</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>DAO.DaoFigureGeometrique.psSelect devrait &#xea;tre package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
 <td></td>
 <td>Medium</td></tr>
+<tr class="b">
+<td>DAO.DaoFigureGeometrique.update(FormeGeometrique, String) may fail to clean up java.sql.Statement</td>
+<td>EXPERIMENTAL</td>
+<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION">OBL_UNSATISFIED_OBLIGATION</a></td>
+<td>90</td>
+<td>Medium</td></tr>
 <tr class="a">
 <td>DAO.DaoFigureGeometrique.read(String) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td>46</td>
+<td>52</td>
 <td>Medium</td></tr>
 <tr class="b">
-<td>La m&#xe9;thode DAO.DaoFigureGeometrique.read(String) intercepte Exception, mais Exception n'est pas lanc&#xe9; dans le bloc try/catch et RuntimeException n'est pas appel&#xe9;</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION</a></td>
-<td>59</td>
+<td>La m&#xe9;thode DAO.DaoFigureGeometrique.update(FormeGeometrique, String) peut ne pas fermer une ressource base de donn&#xe9;es</td>
+<td>BAD_PRACTICE</td>
+<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ODR_OPEN_DATABASE_RESOURCE">ODR_OPEN_DATABASE_RESOURCE</a></td>
+<td>90</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Unread public/protected field: DAO.DaoFigureGeometrique.rs</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD</a></td>
-<td>30</td>
-<td>Medium</td></tr></table></div><a name="DAO.DaoRectangle"></a>
-<div class="section">
-<h3><a name="DAO.DaoRectangle"></a>DAO.DaoRectangle</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>L'objet non s&#xe9;rialisable DaoRectangle.java:[line 35] est &#xe9;crit dans ObjectOutput dans DAO.DaoRectangle.create(Rectangle)</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DMI_NONSERIALIZABLE_OBJECT_WRITTEN">DMI_NONSERIALIZABLE_OBJECT_WRITTEN</a></td>
 <td>35</td>
-<td>High</td></tr></table></div><a name="DAO.DaoTriangle"></a>
-<div class="section">
-<h3><a name="DAO.DaoTriangle"></a>DAO.DaoTriangle</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>L'objet non s&#xe9;rialisable DaoTriangle.java:[line 34] est &#xe9;crit dans ObjectOutput dans DAO.DaoTriangle.create(Triangle)</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DMI_NONSERIALIZABLE_OBJECT_WRITTEN">DMI_NONSERIALIZABLE_OBJECT_WRITTEN</a></td>
-<td>34</td>
-<td>High</td></tr></table></div><a name="DessinException.iOdessinException"></a>
+<td>Medium</td></tr></table></div><a name="DessinException.iOdessinException"></a>
 <div class="section">
 <h3><a name="DessinException.iOdessinException"></a>DessinException.iOdessinException</h3>
 <table border="0" class="bodyTable">
@@ -403,7 +331,7 @@ pglp_9.9
 <td>Le nom de la classe DessinException.iOdessinException ne commence pas par une majusucle</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NM_CLASS_NAMING_CONVENTION">NM_CLASS_NAMING_CONVENTION</a></td>
-<td>7</td>
+<td>8</td>
 <td>Medium</td></tr></table></div><a name="fr.uvsq.solid.pglp_9.DrawingApp"></a>
 <div class="section">
 <h3><a name="fr.uvsq.solid.pglp_9.DrawingApp"></a>fr.uvsq.solid.pglp_9.DrawingApp</h3>

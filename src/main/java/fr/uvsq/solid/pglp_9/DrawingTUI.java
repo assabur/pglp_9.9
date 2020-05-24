@@ -32,7 +32,7 @@ public class DrawingTUI {
 		if (VerificationSaisie.verificationSaisieUser(chaineUser))
 
 		{
-			this.parametre = interpreter.DecoupeChaine(chaineUser);
+			this.parametre = interpreter.decoupeChaine(chaineUser);
 			if (chaineUser.toLowerCase().contains("move")||chaineUser.toLowerCase().contains("show") || chaineUser.toLowerCase().contains("quit")
 					|| chaineUser.toLowerCase().contentEquals("help")) {
 				commandename = this.parametre.get(0);
@@ -53,10 +53,7 @@ public class DrawingTUI {
 				&& parametre.get(0).toLowerCase().contentEquals("quit") == false) {
 			this.parametre = this.parametre.subList(0, 1);
 			this.parametre.add(this.parametre.get(0));
-			/*
-			 * try { // AfficheFig.affich(ContFig.get()); } catch (Exception e)
-			 * { Flash.affiche("exception a gerer dans affich"); }
-			 */
+			
 		}
 	}
 }

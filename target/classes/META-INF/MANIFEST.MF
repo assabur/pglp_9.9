@@ -1,5 +1,7 @@
 Manifest-Version: 1.0
 Built-By: MAIGA
+Class-Path: lib/log4j-1.2.17.jar lib/derby-10.8.3.0.jar
 Build-Jdk: 1.8.0_221
 Created-By: Maven Integration for Eclipse
+Main-Class: fr.uvsq.solid.pglp_9.DrawingApp
 

@@ -15,6 +15,7 @@ public class ConnectionDerby {
 	 * definition des constantes de connexion
 	 */
 	private static String JDBC_URL="jdbc:derby:FormeDB;create=true";
+	
 	//private static String JDBC_DOWN="jdbc:derby:FormeDB;shutdown=true";
 
 	//private static String JDBC_URL="jdbc:derby://localhost:1527/FormeDB";
