@@ -1,14 +1,25 @@
 # pglp_9.9
 # Logiciel de dessin en ligne de commande
+
+Création d'un cercle: NomCercle =Cercle((X, Y), rayon)
+Création d'un carré: Nomcarre =Carre((Point1_X, Point1_Y),(Point2_X, Point2_Y))
+Création d'un rectancle: NomRectangle =Rectangle((Point1_X, Point1_Y), (Point2_X, Point2_Y))
+Création d'un triangle: NomTriangle =Triangle((Point1_X, Point1_Y), (Point2_X, Point2_Y), (Point3_X, Point3_Y))
+Creation d'un groupe: Nom_groupe = groupe(nomfig1,nomfig2)
+Pour afficher une figure : affiche(Nomfigure)
+	Pour déplacer une figure : move(NomFigure, (Point1, Point2))
+	Pour quitter le programme: quit()
+
 Objectif du projet
 
 Réaliser un logiciel de dessin qui permet de faire une description textuelle, de creer de deplacer des figures géométriques telles que: des carre, des rectangles, des cercles des triangles, mais aussi d'un groupe de figure.
 Description des figures
-	Un carre est une figure géométrique ayant un point et un coté. Exemple: Carre(upLeft(1,0),cote=10)
-	Un cercle est une figure géométrique ayant un centre et un rayon. Exemple: Cercle(centre=(0,0),rayon=10)
-	Un rectangle est une figure géométrique ayant un point haut gauche(upLeft) et un point bas 	droit(downRight). 
-	Exemple: Rectangle(upLeft(1,5),upRight(3,2))
-	Un triangle est une figure géométrique ayant trois points et un rayon. Exemple: 	Triangle(point1(1,1),point2(3,4),point3(0,4))
+Un carre est une figure géométrique ayant un point et un coté. Exemple: Carre(upLeft(1,0),cote=10)
+Un cercle est une figure géométrique ayant un centre et un rayon. Exemple: Cercle(centre=(0,0),rayon=10)
+Un rectangle est une figure géométrique ayant un point haut gauche(upLeft) et un point bas 	droit(downRight). 
+Exemple: Rectangle(upLeft(1,5),upRight(3,2))
+Un triangle est une figure géométrique ayant trois points et un rayon. Exemple:Triangle(point1(1,1),point2(3,4),point3(0,4))
+
 # Manuel utilisateur 
 Pour faciliter l'utilisation du logiciel l'utilisateur pourra voir l'ensemble des commandes à l'aide de la commande HELP. Ainsi on peut voir certaines commandes specifiques et d'autres generiques. 
 	Creation:  
