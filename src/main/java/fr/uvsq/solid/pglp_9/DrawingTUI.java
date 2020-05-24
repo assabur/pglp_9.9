@@ -33,7 +33,7 @@ public class DrawingTUI {
 
 		{
 			this.parametre = interpreter.DecoupeChaine(chaineUser);
-			if (chaineUser.toLowerCase().contains("show") || chaineUser.toLowerCase().contains("quit")
+			if (chaineUser.toLowerCase().contains("move")||chaineUser.toLowerCase().contains("show") || chaineUser.toLowerCase().contains("quit")
 					|| chaineUser.toLowerCase().contentEquals("help")) {
 				commandename = this.parametre.get(0);
 			} else {

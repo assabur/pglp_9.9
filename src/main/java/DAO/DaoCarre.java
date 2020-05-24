@@ -59,10 +59,7 @@ public class DaoCarre extends DAO_Figure<Carre>{
 		catch (IOException e) {
 			Flash.affiche("erreur IO");
 		}
-		
-		
-		
-		return false;
+	return false;
 	}
 
 	@Override

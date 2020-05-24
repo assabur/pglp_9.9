@@ -6,7 +6,7 @@ public class iOdessinException extends Exception {
 
 	public iOdessinException() 
 	{
-		Flash.affiche("Erreur de flux de données ");
+		Flash.affiche("Acces refusé tapez Help pour l'aide");
 	}
 
 }

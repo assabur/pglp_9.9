@@ -35,9 +35,9 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 			/*
 			 * j'initialise ma requette preparé
 			 */
-			
+
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			
+
 			//statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
@@ -55,9 +55,9 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 			psInsert.setBinaryStream(2, objectIn, b.length);
 			//Flash.affiche("avant insertion ");
 			int test=psInsert.executeUpdate();
-			
+
 			//Flash.affiche("forme creer ");
-			
+
 			//System.out.println(objectIn);
 			objectIn.close();
 			os.flush();
@@ -78,15 +78,15 @@ public class DaoCercle extends DAO_Figure<Cercle> {
 
 	@Override
 	public Cercle read(Object monObjet) 
-	 {
-		 Cercle cercle;
-		  try {
-				    cercle = (Cercle)monObjet;	
-				    return cercle;
+	{
+		Cercle cercle;
+		try {
+			cercle = (Cercle)monObjet;	
+			return cercle;
 		} catch (Exception e) {
 			Flash.affiche("echec au niveau du cast ");
 		}		
-			  return null;	 
+		return null;	 
 	}
 
 	@Override

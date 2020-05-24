@@ -24,9 +24,9 @@ public class DaoComposite extends DAO_Figure<CompositeFigure> {
 			/*
 			 * j'initialise ma requette preparé
 			 */
-			
+
 			psInsert = conn.prepareStatement(SQL_SERIALIZE_OBJECT);
-			
+
 			//statements.add(psInsert);
 			/*
 			 * transformation de mon objet en flux de données
@@ -44,9 +44,9 @@ public class DaoComposite extends DAO_Figure<CompositeFigure> {
 			psInsert.setBinaryStream(2, objectIn, b.length);
 			//Flash.affiche("avant insertion ");
 			int test=psInsert.executeUpdate();
-			
+
 			//Flash.affiche("forme creer ");
-			
+
 			//System.out.println(objectIn);
 			objectIn.close();
 			os.flush();

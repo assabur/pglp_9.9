@@ -1,6 +1,9 @@
 package Formes;
 
-public class Rectangle extends FormeGeometrique {
+import java.io.Serializable;
+
+public class Rectangle extends FormeGeometrique implements Serializable
+{
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 
@@ -50,7 +53,7 @@ public class Rectangle extends FormeGeometrique {
 	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
-		str.append("nom");
+		str.append(nom);
 		str.append("(rectangle");
 		str.append(upLeft.toString());
 		str.append(", ");

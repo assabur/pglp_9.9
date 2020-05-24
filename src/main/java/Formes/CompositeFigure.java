@@ -1,10 +1,11 @@
 package Formes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CompositeFigure extends FormeGeometrique
+public class CompositeFigure extends FormeGeometrique implements Serializable
 {
 	/**
 	 * methode qui effectue un move sur l'ensemble des elements d'un composite
@@ -60,7 +61,7 @@ public class CompositeFigure extends FormeGeometrique
 		str.append(" (Groupe=>");
 		for(FormeGeometrique formesComposite: formes)
 		{			
-			str.append(formesComposite.toString());
+			str.append(formesComposite.toString()+" ");
 		}	
 		str.append(" )");
 		return str.toString();		

@@ -1,7 +1,8 @@
 package Formes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class AfficheComposite {
+public class AfficheComposite implements Serializable{
 	
 	/*
 	 * declaration des attributs

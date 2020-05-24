@@ -53,7 +53,7 @@ public class DaoRectangle extends DAO_Figure<Rectangle> {
 			return true;
 
 		} catch (SQLException e) {
-			Flash.affiche("erreur sql ");
+			Flash.affiche("erreur d'acces a la BD ");
 		}
 		catch (IOException e) {
 			Flash.affiche("erreur IO");

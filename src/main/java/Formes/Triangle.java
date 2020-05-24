@@ -1,6 +1,8 @@
 package Formes;
 
-public class Triangle extends FormeGeometrique{
+import java.io.Serializable;
+
+public class Triangle extends FormeGeometrique implements Serializable{
 
 	
 	private String name;

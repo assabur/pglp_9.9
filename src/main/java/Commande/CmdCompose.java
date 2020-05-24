@@ -3,7 +3,8 @@ package Commande;
 import java.util.ArrayList;
 import java.util.List;
 
-import DessinException.NullPointerObj;
+import DessinException.BdException;
+import DessinException.iOdessinException;
 import fr.uvsq.solid.pglp_9.Flash;
 
 public class CmdCompose implements GenericCommande
@@ -18,14 +19,15 @@ public class CmdCompose implements GenericCommande
 	{
 		this.receiver=receiver;
 	}
-	
+
 	@Override
 	public void execute(List<String> parametre) {
-				
+
 		try {
 			receiver.makeCompose(parametre);
-		} catch (NullPointerObj e) {
-			Flash.affiche("commande mal initialisée" );
-		}
+		} catch (BdException | iOdessinException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}	
 	}
 }

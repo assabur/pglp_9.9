@@ -1,6 +1,8 @@
 package Formes;
 
-public class Carre extends FormeGeometrique{
+import java.io.Serializable;
+
+public class Carre extends FormeGeometrique implements Serializable{
 	/** Coordonné du coin superieur gauche */
 	private Point upLeft;
 
